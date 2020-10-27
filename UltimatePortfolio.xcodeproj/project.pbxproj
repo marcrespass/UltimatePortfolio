@@ -1,0 +1,219 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */; };
+		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
+		D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FA254784F3000682AB /* Assets.xcassets */; };
+		D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FD254784F3000682AB /* Preview Assets.xcassets */; };
+		D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D33FF7F3254784F2000682AB /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
+		D33FF7F8254784F2000682AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D33FF7FA254784F3000682AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D33FF7FD254784F3000682AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D33FF7FF254784F3000682AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = 1XcodeWarnings.xcconfig; sourceTree = "<group>"; };
+		D33FF80A25478535000682AB /* 2Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = 2Common.xcconfig; sourceTree = "<group>"; };
+		D33FF80B25478535000682AB /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
+		D33FF80C25478535000682AB /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
+		D33FF80D25478535000682AB /* App-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D33FF7F0254784F2000682AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D33FF7EA254784F2000682AB = {
+			isa = PBXGroup;
+			children = (
+				D33FF80625478516000682AB /* XCConfig */,
+				D33FF7F5254784F2000682AB /* UltimatePortfolio */,
+				D33FF7F4254784F2000682AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D33FF7F4254784F2000682AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D33FF7F3254784F2000682AB /* UltimatePortfolio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D33FF7F5254784F2000682AB /* UltimatePortfolio */ = {
+			isa = PBXGroup;
+			children = (
+				D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */,
+				D33FF7F8254784F2000682AB /* ContentView.swift */,
+				D33FF7FA254784F3000682AB /* Assets.xcassets */,
+				D33FF7FF254784F3000682AB /* Info.plist */,
+				D33FF7FC254784F3000682AB /* Preview Content */,
+			);
+			path = UltimatePortfolio;
+			sourceTree = "<group>";
+		};
+		D33FF7FC254784F3000682AB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D33FF7FD254784F3000682AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D33FF80625478516000682AB /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */,
+				D33FF80A25478535000682AB /* 2Common.xcconfig */,
+				D33FF80B25478535000682AB /* App-Debug.xcconfig */,
+				D33FF80C25478535000682AB /* App-Release.xcconfig */,
+				D33FF80D25478535000682AB /* App-Shared.xcconfig */,
+			);
+			path = XCConfig;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D33FF7F2254784F2000682AB /* UltimatePortfolio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33FF802254784F3000682AB /* Build configuration list for PBXNativeTarget "UltimatePortfolio" */;
+			buildPhases = (
+				D33FF7EF254784F2000682AB /* Sources */,
+				D33FF7F0254784F2000682AB /* Frameworks */,
+				D33FF7F1254784F2000682AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UltimatePortfolio;
+			productName = UltimatePortfolio;
+			productReference = D33FF7F3254784F2000682AB /* UltimatePortfolio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D33FF7EB254784F2000682AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					D33FF7F2254784F2000682AB = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = D33FF7EE254784F2000682AB /* Build configuration list for PBXProject "UltimatePortfolio" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D33FF7EA254784F2000682AB;
+			productRefGroup = D33FF7F4254784F2000682AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D33FF7F2254784F2000682AB /* UltimatePortfolio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D33FF7F1254784F2000682AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */,
+				D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */,
+				D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D33FF7EF254784F2000682AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33FF7F9254784F2000682AB /* ContentView.swift in Sources */,
+				D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D33FF800254784F3000682AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D33FF801254784F3000682AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		D33FF803254784F3000682AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33FF80B25478535000682AB /* App-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D33FF804254784F3000682AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33FF80C25478535000682AB /* App-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D33FF7EE254784F2000682AB /* Build configuration list for PBXProject "UltimatePortfolio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33FF800254784F3000682AB /* Debug */,
+				D33FF801254784F3000682AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33FF802254784F3000682AB /* Build configuration list for PBXNativeTarget "UltimatePortfolio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33FF803254784F3000682AB /* Debug */,
+				D33FF804254784F3000682AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D33FF7EB254784F2000682AB /* Project object */;
+}

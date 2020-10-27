@@ -1,0 +1,37 @@
+
+#include "1XcodeWarnings.xcconfig"
+
+//https://nshipster.com/xcconfig/
+//TIP: run a build of your project with `-DAPI_TO_BE_DEPRECATED=10_14` in your CFLAGS. (Substitute 10_14 with your deploy target as needed.)
+//This gives you a preview of APIs that are soft deprecated and may be hard deprecated in the future, and many of them come with fix-its now.
+OTHER_CFLAGS = -DAPI_TO_BE_DEPRECATED=13_0
+
+SDKROOT = iphoneos
+
+SWIFT_COMPILATION_MODE = wholemodule
+
+IPHONEOS_DEPLOYMENT_TARGET = 14.0
+TARGETED_DEVICE_FAMILY = 1,2
+
+PRODUCT_NAME = $(TARGET_NAME)
+PRODUCT_BUNDLE_PREFIX = com.iliosinc
+
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+
+INFOPLIST_FILE = $(PRODUCT_NAME)/Info.plist
+
+COMBINE_HIDPI_IMAGES = YES
+
+SWIFT_VERSION = 5.0
+
+// Code Signing Identity
+CODE_SIGN_IDENTITY = iPhone Developer
+CODE_SIGN_STYLE = Automatic
+DEVELOPMENT_TEAM = 2WW9KC8P4G
+PROVISIONING_PROFILE_SPECIFIER =
+CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES
+
+ALWAYS_SEARCH_USER_PATHS = NO
+
+// Update this for the current year
+COPYRIGHT_YEAR = 2008-2020
