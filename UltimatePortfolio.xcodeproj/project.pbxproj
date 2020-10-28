@@ -12,6 +12,7 @@
 		D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FA254784F3000682AB /* Assets.xcassets */; };
 		D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FD254784F3000682AB /* Preview Assets.xcassets */; };
 		D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */; };
+		D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D378A351254A03900056EC66 /* Main.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D33FF80B25478535000682AB /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
 		D33FF80C25478535000682AB /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
 		D33FF80D25478535000682AB /* App-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
+		D378A352254A03900056EC66 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
 				D33FF7FF254784F3000682AB /* Info.plist */,
 				D33FF7FC254784F3000682AB /* Preview Content */,
+				D378A351254A03900056EC66 /* Main.xcdatamodeld */,
 			);
 			path = UltimatePortfolio;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */,
 				D33FF7F9254784F2000682AB /* ContentView.swift in Sources */,
 				D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */,
 			);
@@ -214,6 +218,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D378A351254A03900056EC66 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D378A352254A03900056EC66 /* Main.xcdatamodel */,
+			);
+			currentVersion = D378A352254A03900056EC66 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D33FF7EB254784F2000682AB /* Project object */;
 }
