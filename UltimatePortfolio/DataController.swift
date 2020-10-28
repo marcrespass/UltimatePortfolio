@@ -35,6 +35,29 @@ public final class DataController: ObservableObject {
         }
     }
 
+    func save() throws {
+        if self.container.viewContext.hasChanges {
+            try self.container.viewContext.save()
+        }
+    }
+
+    func delete(_ object: NSManagedObject) {
+        self.container.viewContext.delete(object)
+    }
+}
+
+extension DataController {
+
+    func deleteAll() {
+        let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
+        let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
+        _ = try? container.viewContext.execute(batchDeleteRequest1)
+
+        let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
+        let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
+        _ = try? container.viewContext.execute(batchDeleteRequest2)
+}
+
     func createSampleData() throws {
         let viewContext = self.container.viewContext
 
