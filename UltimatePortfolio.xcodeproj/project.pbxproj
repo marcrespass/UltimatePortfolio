@@ -14,6 +14,7 @@
 		D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */; };
 		D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D378A351254A03900056EC66 /* Main.xcdatamodeld */; };
 		D378A358254A09420056EC66 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378A357254A09420056EC66 /* DataController.swift */; };
+		D378A35E254A11FB0056EC66 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D378A35D254A11FB0056EC66 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		D33FF80D25478535000682AB /* App-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
 		D378A352254A03900056EC66 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		D378A357254A09420056EC66 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
+		D378A35D254A11FB0056EC66 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D378A35E254A11FB0056EC66 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +53,7 @@
 				D33FF80625478516000682AB /* XCConfig */,
 				D33FF7F5254784F2000682AB /* UltimatePortfolio */,
 				D33FF7F4254784F2000682AB /* Products */,
+				D378A35C254A11FB0056EC66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +68,7 @@
 		D33FF7F5254784F2000682AB /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */,
 				D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */,
 				D33FF7F8254784F2000682AB /* ContentView.swift */,
 				D378A357254A09420056EC66 /* DataController.swift */,
@@ -92,6 +98,14 @@
 				D33FF80D25478535000682AB /* App-Shared.xcconfig */,
 			);
 			path = XCConfig;
+			sourceTree = "<group>";
+		};
+		D378A35C254A11FB0056EC66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D378A35D254A11FB0056EC66 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +204,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80B25478535000682AB /* App-Debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Debug;
 		};
@@ -197,6 +212,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80C25478535000682AB /* App-Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Release;
 		};
