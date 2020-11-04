@@ -37,7 +37,7 @@
 		D378A357254A09420056EC66 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		D378A35D254A11FB0056EC66 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
-		D3BCA7562552FEDA00EE536F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D3BCA75A2553030200EE536F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +55,7 @@
 		D33FF7EA254784F2000682AB = {
 			isa = PBXGroup;
 			children = (
+				D3BCA75A2553030200EE536F /* README.md */,
 				D33FF80625478516000682AB /* XCConfig */,
 				D33FF7F5254784F2000682AB /* UltimatePortfolio */,
 				D33FF7F4254784F2000682AB /* Products */,
@@ -73,7 +74,6 @@
 		D33FF7F5254784F2000682AB /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				D3BCA7562552FEDA00EE536F /* README.md */,
 				D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */,
 				D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */,
 				D33FF7F8254784F2000682AB /* ContentView.swift */,
