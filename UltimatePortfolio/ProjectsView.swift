@@ -28,8 +28,10 @@ struct ProjectsView: View {
             List {
                 ForEach(projects.wrappedValue) { project in
                     Section(header: Text(project.projectTitle)) {
+                        // Alt syntax
+                        // ForEach(project.projectItems, content: ItemRowView.init)
                         ForEach(project.projectItems) { item in
-                            Text(item.itemTitle)
+                            ItemRowView(item: item)
                         }
                     }
                 }
