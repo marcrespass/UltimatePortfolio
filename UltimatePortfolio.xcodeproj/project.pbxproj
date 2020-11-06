@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D302DDA12555C4F60050E01E /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302DDA02555C4F60050E01E /* Binding+Extensions.swift */; };
+		D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */; };
+		D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D302DDCD2555F56D0050E01E /* Colors.xcassets */; };
 		D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */; };
 		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
 		D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FA254784F3000682AB /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		D302DDA02555C4F60050E01E /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
+		D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
+		D302DDCD2555F56D0050E01E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D33FF7F3254784F2000682AB /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		D33FF7F8254784F2000682AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,10 +96,12 @@
 				D3C90A1925547A3200E3F485 /* EditItemView.swift */,
 				D3C90A1C25547FA500E3F485 /* ItemRowView.swift */,
 				D378A357254A09420056EC66 /* DataController.swift */,
+				D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */,
 				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
 				D302DDA02555C4F60050E01E /* Binding+Extensions.swift */,
 				D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */,
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
+				D302DDCD2555F56D0050E01E /* Colors.xcassets */,
 				D33FF7FF254784F3000682AB /* Info.plist */,
 				D33FF7FC254784F3000682AB /* Preview Content */,
 				D378A351254A03900056EC66 /* Main.xcdatamodeld */,
@@ -189,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */,
+				D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */,
 				D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */,
 				D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */,
 			);
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3726DD22553338B004B281F /* Project+CoreDataHelpers.swift in Sources */,
+				D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */,
 				D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */,
 				D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */,
 				D378A358254A09420056EC66 /* DataController.swift in Sources */,
