@@ -35,9 +35,13 @@ public final class DataController: ObservableObject {
         }
     }
 
-    func save() throws {
+    func save() {
         if self.container.viewContext.hasChanges {
-            try self.container.viewContext.save()
+            do {
+                try self.container.viewContext.save()
+            } catch {
+                print("ERROR: \(error.localizedDescription)")
+            }
         }
     }
 
@@ -56,7 +60,7 @@ extension DataController {
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
-}
+    }
 
     func createSampleData() throws {
         let viewContext = self.container.viewContext
