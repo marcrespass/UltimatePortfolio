@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D302DDA12555C4F60050E01E /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302DDA02555C4F60050E01E /* Binding+Extensions.swift */; };
 		D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */; };
 		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
 		D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FA254784F3000682AB /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D302DDA02555C4F60050E01E /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		D33FF7F3254784F2000682AB /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		D33FF7F8254784F2000682AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D3C90A1C25547FA500E3F485 /* ItemRowView.swift */,
 				D378A357254A09420056EC66 /* DataController.swift */,
 				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
+				D302DDA02555C4F60050E01E /* Binding+Extensions.swift */,
 				D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */,
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
 				D33FF7FF254784F3000682AB /* Info.plist */,
@@ -208,6 +211,7 @@
 				D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */,
 				D3726DCF25533383004B281F /* Item+CoreDataHelpers.swift in Sources */,
 				D3C90A1A25547A3200E3F485 /* EditItemView.swift in Sources */,
+				D302DDA12555C4F60050E01E /* Binding+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

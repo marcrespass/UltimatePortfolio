@@ -21,6 +21,12 @@ struct UltimatePortfolioApp: App {
             ContentView()
                 .environment(\.managedObjectContext, self.dataController.container.viewContext)
                 .environmentObject(self.dataController)
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
+                           perform: self.save(_:))
         }
+    }
+
+    func save(_ note: Notification) {
+        self.dataController.save()
     }
 }
