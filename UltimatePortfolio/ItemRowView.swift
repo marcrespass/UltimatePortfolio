@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct ItemRowView: View {
-   @ObservedObject var item: Item // someone else owns this and I am observing it
-    
+    @ObservedObject var project: Project
+    @ObservedObject var item: Item // someone else owns this and I am observing it
+
+    var icon: some View {
+        if item.completed {
+            return Image(systemName: "checkmark.circle")
+                .foregroundColor(Color(project.projectColor))
+        } else if item.priority == 3 {
+            return Image(systemName: "exclamationmark.triangle")
+                .foregroundColor(Color(project.projectColor))
+        } else {
+            return Image(systemName: "checkmark.circle")
+                .foregroundColor(Color(.clear))
+        }
+    }
+
     var body: some View {
         NavigationLink(destination: EditItemView(item: item)) {
-            Text(item.itemTitle)
+            Label {
+                Text(item.itemTitle)
+            } icon: {
+                self.icon
+            }
+
         }
     }
 }
 
 struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRowView(item: Item.example)
+        ItemRowView(project: Item.example.project!, item: Item.example)
     }
 }
