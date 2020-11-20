@@ -41,17 +41,17 @@ struct ProjectsView: View {
                                 ForEach(project.projectItems(using: self.sortOrder)) { item in
                                     ItemRowView(project: project, item: item)
                                 }
-                                .onDelete { offsets in
-                                    let allItems = project.projectItems
+                                .onDelete { indexSet in
+                                    let allItems = project.projectItems(using: self.sortOrder)
 
-                                    for offset in offsets {
+                                    for offset in indexSet {
+                                        debugPrint("Deleting \(offset)")
                                         let item = allItems[offset]
                                         dataController.delete(item)
                                     }
 
                                     dataController.save()
                                 }
-
                                 if showClosedProjects == false {
                                     Button {
                                         withAnimation {
