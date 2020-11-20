@@ -102,6 +102,8 @@ struct ProjectsView: View {
                     .cancel()
                 ])
             }
+
+            SelectSomethingView()
         }
     }
 }
