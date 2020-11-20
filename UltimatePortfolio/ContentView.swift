@@ -9,7 +9,7 @@ import SwiftUI
 
 /*
  The problem with optionals
-we want selectedView to be an optional String so that it can be nil
+ we want selectedView to be an optional String so that it can be nil
  when we start but now SwiftUI is comparing Optional<String> to String
  and they can never be equal (!)
  Thus we will change our static tags to be optional and set a value
@@ -39,6 +39,13 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "checkmark")
                     Text("Closed")
+                }
+
+            AwardsView()
+                .tag(AwardsView.tag)
+                .tabItem {
+                    Image(systemName: "rosette")
+                    Text("Awards")
                 }
         }
     }
