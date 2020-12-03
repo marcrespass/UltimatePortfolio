@@ -10,6 +10,7 @@
 		D302DDA12555C4F60050E01E /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302DDA02555C4F60050E01E /* Binding+Extensions.swift */; };
 		D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */; };
 		D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D302DDCD2555F56D0050E01E /* Colors.xcassets */; };
+		D312DCBF2579806E00F1CB4E /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312DCBE2579806E00F1CB4E /* Color+Additions.swift */; };
 		D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */; };
 		D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */; };
 		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
@@ -37,6 +38,7 @@
 		D302DDA02555C4F60050E01E /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		D302DDCD2555F56D0050E01E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D312DCBE2579806E00F1CB4E /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
 		D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		D33FF7F3254784F2000682AB /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				D302DDA02555C4F60050E01E /* Binding+Extensions.swift */,
 				D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */,
 				D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */,
+				D312DCBE2579806E00F1CB4E /* Color+Additions.swift */,
 				D3DD42FB25687C3B00E4B742 /* Awards.json */,
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
 				D302DDCD2555F56D0050E01E /* Colors.xcassets */,
@@ -236,6 +239,7 @@
 				D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */,
 				D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */,
 				D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */,
+				D312DCBF2579806E00F1CB4E /* Color+Additions.swift in Sources */,
 				D3D074EA255A0F36008F0652 /* EditProjectView.swift in Sources */,
 				D3DD42F9256876E300E4B742 /* SelectSomethingView.swift in Sources */,
 				D3DD430325687DA000E4B742 /* Award.swift in Sources */,
