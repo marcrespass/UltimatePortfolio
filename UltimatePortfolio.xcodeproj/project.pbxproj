@@ -25,6 +25,7 @@
 		D378A358254A09420056EC66 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378A357254A09420056EC66 /* DataController.swift */; };
 		D378A35E254A11FB0056EC66 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D378A35D254A11FB0056EC66 /* CloudKit.framework */; };
 		D3A42BC1257EE4A500AEA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BC0257EE4A500AEA544 /* Localizable.strings */; };
+		D3A42BC4257EEC3500AEA544 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BC3257EEC3500AEA544 /* Localizable.stringsdict */; };
 		D3C90A1A25547A3200E3F485 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C90A1925547A3200E3F485 /* EditItemView.swift */; };
 		D3C90A1D25547FA500E3F485 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C90A1C25547FA500E3F485 /* ItemRowView.swift */; };
 		D3D074EA255A0F36008F0652 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D074E9255A0F36008F0652 /* EditProjectView.swift */; };
@@ -61,6 +62,7 @@
 		D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		D378A35D254A11FB0056EC66 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		D3A42BC0257EE4A500AEA544 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D3A42BC3257EEC3500AEA544 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		D3BCA75A2553030200EE536F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D3C90A1925547A3200E3F485 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		D3C90A1C25547FA500E3F485 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				D312DCBE2579806E00F1CB4E /* Color+Additions.swift */,
 				D3DD42FB25687C3B00E4B742 /* Awards.json */,
 				D3A42BC0257EE4A500AEA544 /* Localizable.strings */,
+				D3A42BC3257EEC3500AEA544 /* Localizable.stringsdict */,
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
 				D302DDCD2555F56D0050E01E /* Colors.xcassets */,
 				D33FF7FF254784F3000682AB /* Info.plist */,
@@ -227,6 +230,7 @@
 				D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */,
 				D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */,
 				D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */,
+				D3A42BC4257EEC3500AEA544 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
