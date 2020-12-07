@@ -24,13 +24,13 @@
 		D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D378A351254A03900056EC66 /* Main.xcdatamodeld */; };
 		D378A358254A09420056EC66 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378A357254A09420056EC66 /* DataController.swift */; };
 		D378A35E254A11FB0056EC66 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D378A35D254A11FB0056EC66 /* CloudKit.framework */; };
-		D3A42BC1257EE4A500AEA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BC0257EE4A500AEA544 /* Localizable.strings */; };
-		D3A42BC4257EEC3500AEA544 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BC3257EEC3500AEA544 /* Localizable.stringsdict */; };
+		D3A42BC7257EF14500AEA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BC9257EF14500AEA544 /* Localizable.strings */; };
+		D3A42BCC257EF1C900AEA544 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BCE257EF1C900AEA544 /* Localizable.stringsdict */; };
+		D3A42BD2257EF34B00AEA544 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BD4257EF34B00AEA544 /* Awards.json */; };
 		D3C90A1A25547A3200E3F485 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C90A1925547A3200E3F485 /* EditItemView.swift */; };
 		D3C90A1D25547FA500E3F485 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C90A1C25547FA500E3F485 /* ItemRowView.swift */; };
 		D3D074EA255A0F36008F0652 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D074E9255A0F36008F0652 /* EditProjectView.swift */; };
 		D3DD42F9256876E300E4B742 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */; };
-		D3DD42FC25687C3B00E4B742 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = D3DD42FB25687C3B00E4B742 /* Awards.json */; };
 		D3DD42FF25687C5600E4B742 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */; };
 		D3DD430325687DA000E4B742 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD430225687DA000E4B742 /* Award.swift */; };
 		D3DD430625687E2700E4B742 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD430525687E2700E4B742 /* AwardsView.swift */; };
@@ -61,14 +61,17 @@
 		D378A357254A09420056EC66 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		D378A35D254A11FB0056EC66 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
-		D3A42BC0257EE4A500AEA544 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		D3A42BC3257EEC3500AEA544 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		D3A42BC8257EF14500AEA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3A42BCB257EF14C00AEA544 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3A42BCD257EF1C900AEA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		D3A42BD0257EF1CD00AEA544 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		D3A42BD3257EF34B00AEA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
+		D3A42BD6257EF34E00AEA544 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/Awards.json; sourceTree = "<group>"; };
 		D3BCA75A2553030200EE536F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D3C90A1925547A3200E3F485 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		D3C90A1C25547FA500E3F485 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		D3D074E9255A0F36008F0652 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
-		D3DD42FB25687C3B00E4B742 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
 		D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		D3DD430225687DA000E4B742 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		D3DD430525687E2700E4B742 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
@@ -127,9 +130,9 @@
 				D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */,
 				D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */,
 				D312DCBE2579806E00F1CB4E /* Color+Additions.swift */,
-				D3DD42FB25687C3B00E4B742 /* Awards.json */,
-				D3A42BC0257EE4A500AEA544 /* Localizable.strings */,
-				D3A42BC3257EEC3500AEA544 /* Localizable.stringsdict */,
+				D3A42BD4257EF34B00AEA544 /* Awards.json */,
+				D3A42BC9257EF14500AEA544 /* Localizable.strings */,
+				D3A42BCE257EF1C900AEA544 /* Localizable.stringsdict */,
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
 				D302DDCD2555F56D0050E01E /* Colors.xcassets */,
 				D33FF7FF254784F3000682AB /* Info.plist */,
@@ -208,6 +211,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D33FF7EA254784F2000682AB;
 			productRefGroup = D33FF7F4254784F2000682AB /* Products */;
@@ -225,12 +229,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */,
-				D3A42BC1257EE4A500AEA544 /* Localizable.strings in Resources */,
-				D3DD42FC25687C3B00E4B742 /* Awards.json in Resources */,
+				D3A42BC7257EF14500AEA544 /* Localizable.strings in Resources */,
+				D3A42BD2257EF34B00AEA544 /* Awards.json in Resources */,
 				D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */,
 				D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */,
 				D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */,
-				D3A42BC4257EEC3500AEA544 /* Localizable.stringsdict in Resources */,
+				D3A42BCC257EF1C900AEA544 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +268,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D3A42BC9257EF14500AEA544 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A42BC8257EF14500AEA544 /* en */,
+				D3A42BCB257EF14C00AEA544 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D3A42BCE257EF1C900AEA544 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A42BCD257EF1C900AEA544 /* en */,
+				D3A42BD0257EF1CD00AEA544 /* es */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		D3A42BD4257EF34B00AEA544 /* Awards.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A42BD3257EF34B00AEA544 /* en */,
+				D3A42BD6257EF34E00AEA544 /* es */,
+			);
+			name = Awards.json;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D33FF800254784F3000682AB /* Debug */ = {

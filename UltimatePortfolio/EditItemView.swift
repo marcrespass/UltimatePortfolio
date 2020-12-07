@@ -30,12 +30,12 @@ struct EditItemView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Basic settings")) {
+            Section(header: Text(NSLocalizedString("Basic settings", comment: ""))) {
                 TextField("Item name", text: $title.onChange(self.update))
                 TextField("Description", text: $detail.onChange(self.update))
             }
 
-            Section(header: Text("Priority")) {
+            Section(header: Text(NSLocalizedString("Priority", comment: ""))) {
                 Picker("Priority", selection: $priority.onChange(self.update)) {
                     Text("Low").tag(1)
                     Text("Medium").tag(2)
@@ -44,7 +44,7 @@ struct EditItemView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
 
-            Section(header: Text("Priority")) {
+            Section {
                 Toggle("Mark Completed", isOn: $completed.onChange(self.update))
             }
         }
