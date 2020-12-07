@@ -33,6 +33,11 @@ public final class DataController: ObservableObject {
         self.container.loadPersistentStores { storeDescription, error in
             if let error = error { fatalError(error.localizedDescription) }
         }
+
+        #if DEBUG
+        self.deleteAll()
+        try? self.createSampleData()
+        #endif
     }
 
     func save() {
