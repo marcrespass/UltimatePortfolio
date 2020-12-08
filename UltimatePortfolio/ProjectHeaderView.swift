@@ -27,6 +27,7 @@ struct ProjectHeaderView: View {
             }
         }
         .padding(10)
+        .accessibilityElement(children: .combine) // combines all items into one
     }
 }
 
