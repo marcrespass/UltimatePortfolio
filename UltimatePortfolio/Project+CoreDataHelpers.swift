@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 extension Project {
     static var example: Project {
@@ -66,6 +67,10 @@ extension Project {
 
         let completedItems = originalItems.filter(\.completed)
         return Double(completedItems.count) / Double(originalItems.count)
+    }
+
+    var label: LocalizedStringKey {
+        LocalizedStringKey("\(self.projectTitle), \(self.projectItems.count) items, \(self.completionAmount * 100, specifier: "%g")% complete.")
     }
 
     func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
