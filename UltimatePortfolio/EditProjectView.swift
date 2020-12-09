@@ -38,31 +38,13 @@ struct EditProjectView: View {
             }
             Section(header: Text("Custom project color")) {
                 LazyVGrid(columns: colorColumns) {
-                    ForEach(Project.colors, id: \.self) { item in
-                        ZStack {
-                            Color(item)
-                                .aspectRatio(1, contentMode: .fit)
-                                .cornerRadius(6)
-
-                            if item == color {
-                                Image(systemName: "checkmark.circle")
-                                    .foregroundColor(.white)
-                                    .font(.largeTitle)
-                            }
-                        }
-                        .onTapGesture {
-                            color = item
-                            update()
-                        }
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityAddTraits(
-                            item == color ? [.isButton, .isSelected] : .isButton
-                        )
-                        .accessibilityLabel(LocalizedStringKey(item))
+                    ForEach(Project.colors, id: \.self) { colorName in
+                        self.colorButton(for: colorName)
                     }
                 }
                 .padding(.vertical)
             }
+
             Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.")) {
                 Button(project.closed ? "Reopen this project" : "Close this project") {
                     self.project.closed.toggle()
@@ -82,6 +64,29 @@ struct EditProjectView: View {
                   message: Text("Are you sure?"),
                   primaryButton: .default(Text("Delete")), secondaryButton: .cancel())
         }
+    }
+
+    func colorButton(for colorName: String) -> some View {
+        ZStack {
+            Color(colorName)
+                .aspectRatio(1, contentMode: .fit)
+                .cornerRadius(6)
+
+            if colorName == color {
+                Image(systemName: "checkmark.circle")
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+            }
+        }
+        .onTapGesture {
+            color = colorName
+            update()
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(
+            colorName == color ? [.isButton, .isSelected] : .isButton
+        )
+        .accessibilityLabel(LocalizedStringKey(colorName))
     }
 
     func update() {
