@@ -62,7 +62,7 @@ struct EditProjectView: View {
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(title: Text("Delete project?"),
                   message: Text("Are you sure?"),
-                  primaryButton: .default(Text("Delete")), secondaryButton: .cancel())
+                  primaryButton: .default(Text("Delete"), action: delete), secondaryButton: .cancel())
         }
     }
 
