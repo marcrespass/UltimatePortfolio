@@ -1,9 +1,6 @@
+# Ultimate Portfolio
 
-Step 4
-    https://www.hackingwithswift.com/plus/ultimate-portfolio-app/storing-your-code-somewhere-safe
+[Paul Hudson's ultimate portfolio](https://www.hackingwithswift.com/plus/ultimate-portfolio-app)
 
-Step 11 
-    Questions and answers
-    
-Step 12
-    Adding and deleting
+Working through the steps to learn Swift UI
+
