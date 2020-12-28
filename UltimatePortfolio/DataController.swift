@@ -30,7 +30,7 @@ public final class DataController: ObservableObject {
             self.container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
 
-        self.container.loadPersistentStores { storeDescription, error in
+        self.container.loadPersistentStores { _, error in
             if let error = error { fatalError(error.localizedDescription) }
         }
 
@@ -91,16 +91,16 @@ extension DataController {
     func createSampleData() throws {
         let viewContext = self.container.viewContext
 
-        for i in 1...5 {
+        for index1 in 1...5 {
             let project = Project(context: viewContext)
-            project.title = "Project \(i)"
+            project.title = "Project \(index1)"
             project.items = []
             project.creationDate = Date()
             project.closed = Bool.random()
 
-            for j in 1...5 {
+            for index2 in 1...5 {
                 let item = Item(context: viewContext)
-                item.title = "Item \(j)"
+                item.title = "Item \(index2)"
                 item.creationDate = Date()
                 item.completed = Bool.random()
                 item.priority = Int16.random(in: 1...3)

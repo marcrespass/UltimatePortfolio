@@ -71,6 +71,9 @@
 		D3A42BD6257EF34E00AEA544 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/Awards.json; sourceTree = "<group>"; };
 		D3A6D60A258179D500AA3B69 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		D3A6D60D25817ED600AA3B69 /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
+		D3B8E647258FD316001F119B /* build-script */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-script"; sourceTree = "<group>"; };
+		D3B8E648258FD316001F119B /* swiftlint-command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "swiftlint-command"; sourceTree = "<group>"; };
+		D3B8E64B258FD347001F119B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D3BCA75A2553030200EE536F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D3C90A1925547A3200E3F485 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		D3C90A1C25547FA500E3F485 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				D3BCA75A2553030200EE536F /* README.md */,
+				D3B8E64B258FD347001F119B /* .swiftlint.yml */,
+				D3B8E646258FD316001F119B /* Build-Phases */,
 				D33FF80625478516000682AB /* XCConfig */,
 				D33FF7F5254784F2000682AB /* UltimatePortfolio */,
 				D33FF7F4254784F2000682AB /* Products */,
@@ -176,6 +181,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D3B8E646258FD316001F119B /* Build-Phases */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8E647258FD316001F119B /* build-script */,
+				D3B8E648258FD316001F119B /* swiftlint-command */,
+			);
+			path = "Build-Phases";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D33FF802254784F3000682AB /* Build configuration list for PBXNativeTarget "UltimatePortfolio" */;
 			buildPhases = (
+				D3B8E644258FD2E3001F119B /* swiftlint */,
 				D33FF7EF254784F2000682AB /* Sources */,
 				D33FF7F0254784F2000682AB /* Frameworks */,
 				D33FF7F1254784F2000682AB /* Resources */,
@@ -245,6 +260,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3B8E644258FD2E3001F119B /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Build-Phases/swiftlint-command\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D33FF7EF254784F2000682AB /* Sources */ = {

@@ -11,7 +11,7 @@ struct ItemListView: View {
     let title: LocalizedStringKey
     let items: FetchedResults<Item>.SubSequence
 
-    fileprivate func ItemCard(item: Item) -> some View {
+    fileprivate func itemCard(item: Item) -> some View {
         HStack(spacing: 20) {
             Circle()
                 .stroke(Color(item.project?.projectColor ?? "Light Blue"), lineWidth: 3)
@@ -40,7 +40,7 @@ struct ItemListView: View {
 
             ForEach(items) { item in
                 NavigationLink(destination: EditItemView(item: item)) {
-                    ItemCard(item: item)
+                    itemCard(item: item)
                         .padding()
                         .background(Color.secondarySystemGroupedBackground)
                         .cornerRadius(10)
