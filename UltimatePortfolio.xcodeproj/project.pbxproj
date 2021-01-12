@@ -117,6 +117,7 @@
 		D322F8CE25AE1F4B009E21E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3A42BD4257EF34B00AEA544 /* Awards.json */,
 				D378A351254A03900056EC66 /* Main.xcdatamodeld */,
 				D3DD430225687DA000E4B742 /* Award.swift */,
 				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
@@ -168,18 +169,17 @@
 		D33FF7F5254784F2000682AB /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */,
 				D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */,
 				D322F8CC25AE1F32009E21E1 /* Views */,
 				D322F8D025AE1F62009E21E1 /* Controllers */,
 				D322F8CE25AE1F4B009E21E1 /* Models */,
 				D322F8D325AE1F7E009E21E1 /* Extensions */,
-				D3A42BD4257EF34B00AEA544 /* Awards.json */,
 				D3A42BC9257EF14500AEA544 /* Localizable.strings */,
 				D3A42BCE257EF1C900AEA544 /* Localizable.stringsdict */,
 				D33FF7FA254784F3000682AB /* Assets.xcassets */,
 				D302DDCD2555F56D0050E01E /* Colors.xcassets */,
 				D33FF7FF254784F3000682AB /* Info.plist */,
+				D378A35A254A111A0056EC66 /* UltimatePortfolio.entitlements */,
 				D33FF7FC254784F3000682AB /* Preview Content */,
 			);
 			path = UltimatePortfolio;
