@@ -28,7 +28,7 @@ struct ProjectsView: View {
         ], predicate: NSPredicate(format: "closed = %d", showClosedProjects))
     }
 
-    var projectsList: some View {
+    var projectsListView: some View {
         List {
             ForEach(projects.wrappedValue) { project in
                 Section(header: ProjectHeaderView(project: project)) {
@@ -87,7 +87,7 @@ struct ProjectsView: View {
                     Text("There's nothing here right now.")
                         .foregroundColor(.secondary)
                 } else {
-                    projectsList
+                    projectsListView
                 }
             }
             .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
