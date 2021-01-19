@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+/*
+ “Code coverage” is the term we use to determine how much of your main app code
+ was run during your tests. It’s usually expressed as a percentage, so 100%
+ coverage would mean that literally every line of your code got hit during your tests.
+ You might think that 100% coverage is exactly what we should all strive for,
+ but actually it’s a bit more complicated than that for two reasons.
+
+ code coverage measures which parts of our app code were RUN during the tests NOT TESTED
+ */
 @main
 struct UltimatePortfolioApp: App {
     @StateObject var dataController: DataController
