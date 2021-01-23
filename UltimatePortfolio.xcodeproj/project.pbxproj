@@ -11,6 +11,8 @@
 		D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */; };
 		D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D302DDCD2555F56D0050E01E /* Colors.xcassets */; };
 		D312DCBF2579806E00F1CB4E /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */; };
+		D3131A0E25BCD606004C9670 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3131A0D25BCD606004C9670 /* ProjectTests.swift */; };
+		D3131A1425BCD9C9004C9670 /* ProcessInfo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */; };
 		D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */; };
 		D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */; };
 		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
@@ -55,6 +57,8 @@
 		D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		D302DDCD2555F56D0050E01E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		D3131A0D25BCD606004C9670 /* ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
+		D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
 		D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		D33FF7F3254784F2000682AB /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */,
 				D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */,
 				D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */,
+				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,8 +255,9 @@
 		D3E13C6925B6534700400A21 /* UltimatePortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3E13C6A25B6534700400A21 /* BaseTestCase.swift */,
 				D3E13C7625B6560300400A21 /* AssetTests.swift */,
+				D3E13C6A25B6534700400A21 /* BaseTestCase.swift */,
+				D3131A0D25BCD606004C9670 /* ProjectTests.swift */,
 				D3E13C6C25B6534700400A21 /* Info.plist */,
 			);
 			path = UltimatePortfolioTests;
@@ -403,6 +409,7 @@
 				D3A6D60B258179D500AA3B69 /* ItemListView.swift in Sources */,
 				D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */,
 				D3726DCF25533383004B281F /* Item+CoreDataHelpers.swift in Sources */,
+				D3131A1425BCD9C9004C9670 /* ProcessInfo+Extensions.swift in Sources */,
 				D3C90A1A25547A3200E3F485 /* EditItemView.swift in Sources */,
 				D302DDA12555C4F60050E01E /* Binding+Extensions.swift in Sources */,
 			);
@@ -414,6 +421,7 @@
 			files = (
 				D3E13C7725B6560300400A21 /* AssetTests.swift in Sources */,
 				D3E13C6B25B6534700400A21 /* BaseTestCase.swift in Sources */,
+				D3131A0E25BCD606004C9670 /* ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

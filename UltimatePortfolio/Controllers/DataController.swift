@@ -42,10 +42,10 @@ public final class DataController: ObservableObject {
             if let error = error { fatalError(error.localizedDescription) }
         }
 
-        #if DEBUG
-        self.deleteAll()
-        try? self.createSampleData()
-        #endif
+        if ProcessInfo.processInfo.isDebugNotTesting() {
+            self.deleteAll()
+            try? self.createSampleData()
+        }
     }
 
     /// Saves our Core Data context iff (if and only if) there are changes. This silently ignores
