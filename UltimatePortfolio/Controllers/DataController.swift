@@ -110,7 +110,7 @@ extension DataController {
             project.creationDate = Date()
             project.closed = Bool.random()
 
-            for index2 in 1...5 {
+            for index2 in 1...10 {
                 let item = Item(context: viewContext)
                 item.title = "Item \(index2)"
                 item.creationDate = Date()
