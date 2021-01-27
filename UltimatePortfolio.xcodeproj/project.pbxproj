@@ -312,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					D33FF7F2254784F2000682AB = {
 						CreatedOnToolsVersion = 12.1;
@@ -486,7 +486,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80B25478535000682AB /* App-Debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Debug;
 		};
@@ -494,7 +493,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80C25478535000682AB /* App-Release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Release;
 		};
