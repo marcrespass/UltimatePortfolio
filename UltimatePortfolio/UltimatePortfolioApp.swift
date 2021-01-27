@@ -16,6 +16,9 @@ import SwiftUI
 
  code coverage measures which parts of our app code were RUN during the tests NOT TESTED
  */
+
+// which-swiftui-property-wrapper
+// https://www.hackingwithswift.com/articles/227/which-swiftui-property-wrapper
 @main
 struct UltimatePortfolioApp: App {
     @StateObject var dataController: DataController
