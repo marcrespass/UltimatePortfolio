@@ -26,4 +26,13 @@ class DevelopmentTests: BaseTestCase {
         XCTAssertEqual(dataController.count(for: Item.fetchRequest()), 0, "Expected 0 items")
     }
 
+    func testExampleProjectIsClosed() {
+        let project = Project.example
+        XCTAssertTrue(project.closed, "project should be closed")
+    }
+
+    func testExampleItemIsHighPriority() {
+        let item = Item.example
+        XCTAssertTrue(item.priority == 3, "item should be high priority")
+    }
 }
