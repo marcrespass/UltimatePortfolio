@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import UltimatePortfolio
 
 class ExtensionTests: XCTestCase {
@@ -31,5 +32,43 @@ class ExtensionTests: XCTestCase {
         }
 
         XCTAssertEqual(sortedItems, [ex3, ex2, ex1], "reverse sorting should be C, B, A")
+    }
+
+    func testBundleDecodingAwards() {
+        let awards: [Award] = Bundle.main.decode(from: "Awards.json")
+        XCTAssertFalse(awards.isEmpty, "Awards.json should deocde a non-empty array.")
+    }
+
+    func testDecodingString() {
+        let bundle = Bundle(for: ExtensionTests.self)
+        let string: String = bundle.decode(from: "DecodableString.json")
+        XCTAssertEqual(string, "The rain in Spain falls mainly on the Spaniards", "should match")
+    }
+
+    func testDecodingDictionary() {
+        let bundle = Bundle(for: ExtensionTests.self)
+        let dict: [String: Int] = bundle.decode(from: "DecodableDictionary.json")
+        XCTAssertEqual(dict["one"], 1)
+        XCTAssertEqual(dict.count, 3)
+    }
+
+    func testBindingOnChange() {
+        var onChangeFunctionRun = false
+
+        func exampleFunctionToCall() {
+            onChangeFunctionRun = true
+        }
+
+        var storedValue = ""
+
+        let binding = Binding(
+            get: { storedValue },
+            set: { storedValue = $0 }
+        )
+
+        let changedBinding = binding.onChange(exampleFunctionToCall)
+        changedBinding.wrappedValue = "Test"
+
+        XCTAssertTrue(onChangeFunctionRun, "onChange() must be run when binding changed")
     }
 }
