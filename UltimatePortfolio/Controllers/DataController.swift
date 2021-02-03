@@ -23,6 +23,18 @@ public final class DataController: ObservableObject {
         return dataController
     }()
 
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
+            fatalError()
+        }
+
+        guard let mom = NSManagedObjectModel(contentsOf: url) else {
+            fatalError()
+        }
+
+        return mom
+    }()
+
     /// The lone CloudKit container used to store all our data.
     let container: NSPersistentCloudKitContainer
 
@@ -32,7 +44,7 @@ public final class DataController: ObservableObject {
     /// Defaults to permanent storage
     /// - Parameter inMemory: Whether to store this data in temporary memory or not.
     init(inMemory: Bool = false) {
-        self.container = NSPersistentCloudKitContainer(name: "Main")
+        self.container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
 
         if inMemory {
             self.container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
