@@ -3,6 +3,7 @@ opt_in_rules: # some rules are only opt-in
 disabled_rules: # rule identifiers to exclude from running
   - trailing_whitespace
   - switch_case_alignment
+  - nesting
 identifier_name:
   excluded:
     - id
