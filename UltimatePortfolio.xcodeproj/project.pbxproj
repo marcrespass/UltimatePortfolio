@@ -22,6 +22,7 @@
 		D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */; };
 		D365A52C254B23170039247B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52B254B23170039247B /* HomeView.swift */; };
 		D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52E254B23CA0039247B /* ProjectsView.swift */; };
+		D36D4AFF25CB0A06002BD900 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D4AFE25CB0A06002BD900 /* DevelopmentTests.swift */; };
 		D3726DCF25533383004B281F /* Item+CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */; };
 		D3726DD22553338B004B281F /* Project+CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */; };
 		D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D378A351254A03900056EC66 /* Main.xcdatamodeld */; };
@@ -75,6 +76,7 @@
 		D33FF80D25478535000682AB /* App-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
 		D365A52B254B23170039247B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D365A52E254B23CA0039247B /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		D36D4AFE25CB0A06002BD900 /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		D378A352254A03900056EC66 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				D3E13C6A25B6534700400A21 /* BaseTestCase.swift */,
 				D3131A0D25BCD606004C9670 /* ProjectTests.swift */,
 				D3131A1925BCDD19004C9670 /* AwardTests.swift */,
+				D36D4AFE25CB0A06002BD900 /* DevelopmentTests.swift */,
 				D3E13C6C25B6534700400A21 /* Info.plist */,
 			);
 			path = UltimatePortfolioTests;
@@ -426,6 +429,7 @@
 				D3131A1A25BCDD19004C9670 /* AwardTests.swift in Sources */,
 				D3E13C6B25B6534700400A21 /* BaseTestCase.swift in Sources */,
 				D3131A0E25BCD606004C9670 /* ProjectTests.swift in Sources */,
+				D36D4AFF25CB0A06002BD900 /* DevelopmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
