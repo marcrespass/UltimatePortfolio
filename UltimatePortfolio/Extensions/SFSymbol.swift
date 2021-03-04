@@ -24,6 +24,6 @@ enum SFSymbol: String, View {
 
 extension Image {
     init(symbol: SFSymbol) {
-        self.init(symbol.rawValue)
+        self.init(systemName: symbol.rawValue)
     }
 }
