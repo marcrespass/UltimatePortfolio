@@ -98,4 +98,15 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Open Projects"].tap()
         XCTAssertTrue(app.buttons["New Item 2"].exists, "The new item should be visible.")
     }
+
+    func testAllAwardsShowLockedAlert() {
+        app.buttons["Awards"].tap()
+
+        for award in app.scrollViews.buttons.allElementsBoundByIndex {
+            award.tap()
+
+            XCTAssertTrue(app.alerts["Locked"].exists, "There should be a locked alert showing for awards.")
+            app.buttons["OK"].tap()
+        }
+    }
 }
