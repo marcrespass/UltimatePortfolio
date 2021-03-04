@@ -53,6 +53,7 @@ class ExtensionTests: XCTestCase {
     }
 
     func testBindingOnChange() {
+        // Given
         var onChangeFunctionRun = false
 
         func exampleFunctionToCall() {
@@ -67,8 +68,11 @@ class ExtensionTests: XCTestCase {
         )
 
         let changedBinding = binding.onChange(exampleFunctionToCall)
+
+        // When we change value
         changedBinding.wrappedValue = "Test"
 
+        // Then we can assert true
         XCTAssertTrue(onChangeFunctionRun, "onChange() must be run when binding changed")
     }
 }
