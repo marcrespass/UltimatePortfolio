@@ -54,6 +54,13 @@ public final class DataController: ObservableObject {
             if let error = error { fatalError(error.localizedDescription) }
         }
 
+        #if DEBUG
+        if CommandLine.arguments.contains("enable-testing") {
+            print("CommandLine has this.")
+            self.deleteAll()
+        }
+        #endif
+
         if ProcessInfo.processInfo.isDebugNotTesting() {
             self.deleteAll()
             try? self.createSampleData()
