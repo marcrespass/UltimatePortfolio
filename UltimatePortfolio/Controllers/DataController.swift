@@ -54,6 +54,13 @@ public final class DataController: ObservableObject {
             if let error = error { fatalError(error.localizedDescription) }
         }
 
+        // If we are debugging and not unit testing
+        // NB: UITests do not add XCTestSessionIdentifier
+        if ProcessInfo.processInfo.isDebugNotTesting() {
+            self.deleteAll()
+            try? self.createSampleData()
+        }
+
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
             print("CommandLine has this.")
@@ -61,10 +68,6 @@ public final class DataController: ObservableObject {
         }
         #endif
 
-        if ProcessInfo.processInfo.isDebugNotTesting() {
-            self.deleteAll()
-            try? self.createSampleData()
-        }
     }
 
     /// Saves our Core Data context iff (if and only if) there are changes. This silently ignores
