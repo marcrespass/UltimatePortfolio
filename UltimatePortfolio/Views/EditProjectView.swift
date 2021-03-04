@@ -74,7 +74,7 @@ struct EditProjectView: View {
                 .cornerRadius(6)
 
             if colorName == color {
-                Image(systemName: "checkmark.circle")
+                SFSymbol.checkmarkCircle
                     .foregroundColor(.white)
                     .font(.largeTitle)
             }

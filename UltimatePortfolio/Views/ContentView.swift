@@ -23,28 +23,28 @@ struct ContentView: View {
             HomeView()
                 .tag(HomeView.tag)
                 .tabItem {
-                    Image(systemName: "house")
+                    SFSymbol.house
                     Text("Home")
                 }
 
             ProjectsView(showClosedProjects: false)
                 .tag(ProjectsView.openTag)
                 .tabItem {
-                    Image(systemName: "list.bullet")
+                    SFSymbol.listBullet
                     Text("Open")
                 }
 
             ProjectsView(showClosedProjects: true)
                 .tag(ProjectsView.closedTag)
                 .tabItem {
-                    Image(systemName: "checkmark")
+                    SFSymbol.checkmark
                     Text("Closed")
                 }
 
             AwardsView()
                 .tag(AwardsView.tag)
                 .tabItem {
-                    Image(systemName: "rosette")
+                    SFSymbol.rosette
                     Text("Awards")
                 }
         }

@@ -13,13 +13,13 @@ struct ItemRowView: View {
 
     var icon: some View {
         if item.completed {
-            return Image(systemName: "checkmark.circle")
+            return Image(symbol: .checkmarkCircle)
                 .foregroundColor(Color(project.projectColor))
         } else if item.priority == 3 {
-            return Image(systemName: "exclamationmark.triangle")
+            return Image(symbol: .exclamationmarkTriangle)
                 .foregroundColor(Color(project.projectColor))
         } else {
-            return Image(systemName: "checkmark.circle")
+            return Image(symbol: .checkmarkCircle)
                 .foregroundColor(Color(.clear))
         }
     }
