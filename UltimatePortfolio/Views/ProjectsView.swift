@@ -21,7 +21,7 @@ struct ProjectsView: View {
 
     var projectsListView: some View {
         List {
-            ForEach(viewModel.projects.wrappedValue) { project in
+            ForEach(viewModel.projects) { project in
                 Section(header: ProjectHeaderView(project: project)) {
                     ForEach(project.projectItems(using: self.viewModel.sortOrder)) { item in
                         ItemRowView(project: project, item: item)
@@ -31,7 +31,9 @@ struct ProjectsView: View {
                     }
                     if viewModel.showClosedProjects == false {
                         Button {
-                            self.viewModel.addItem(to: project)
+                            withAnimation {
+                                self.viewModel.addItem(to: project)
+                            }
                         } label: {
                             Label("Add new item", systemImage: "plus")
                         }
@@ -45,7 +47,11 @@ struct ProjectsView: View {
     var addProjectToolbarItem: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             if viewModel.showClosedProjects == false {
-                Button(action: viewModel.addProject) {
+                Button {
+                    withAnimation {
+                        self.viewModel.addProject()
+                    }
+                } label: {
                     // In iOS 14.3 VoiceOver has a glitch that reads the label
                     // "Add Project" as "Add" no matter what accessibility label
                     // we give this button when using a label. As a result, when
@@ -74,7 +80,7 @@ struct ProjectsView: View {
     var body: some View {
         NavigationView {
             Group {
-                if viewModel.projects.wrappedValue.isEmpty {
+                if viewModel.projects.isEmpty {
                     Text("There's nothing here right now.")
                         .foregroundColor(.secondary)
                 } else {

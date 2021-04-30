@@ -4,6 +4,7 @@ disabled_rules: # rule identifiers to exclude from running
   - trailing_whitespace
   - switch_case_alignment
   - nesting
+  - line_length
 identifier_name:
   excluded:
     - id
