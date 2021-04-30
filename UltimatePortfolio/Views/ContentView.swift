@@ -17,6 +17,7 @@ import SwiftUI
  */
 struct ContentView: View {
     @SceneStorage("selectedView") var selectedView: String?
+    @EnvironmentObject var dataController: DataController
 
     var body: some View {
         TabView(selection: $selectedView) {
@@ -27,14 +28,14 @@ struct ContentView: View {
                     Text("Home")
                 }
 
-            ProjectsView(showClosedProjects: false)
+            ProjectsView(dataController: dataController, showCloseProjects: false)
                 .tag(ProjectsView.openTag)
                 .tabItem {
                     SFSymbol.listBullet
                     Text("Open")
                 }
 
-            ProjectsView(showClosedProjects: true)
+            ProjectsView(dataController: dataController, showCloseProjects: true)
                 .tag(ProjectsView.closedTag)
                 .tabItem {
                     SFSymbol.checkmark
