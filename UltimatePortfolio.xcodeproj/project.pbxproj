@@ -49,6 +49,7 @@
 		D3DD430625687E2700E4B742 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD430525687E2700E4B742 /* AwardsView.swift */; };
 		D3E13C6B25B6534700400A21 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E13C6A25B6534700400A21 /* BaseTestCase.swift */; };
 		D3E13C7725B6560300400A21 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E13C7625B6560300400A21 /* AssetTests.swift */; };
+		D3ED8B222640605D00787BE3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ED8B212640605D00787BE3 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		D3E13C6A25B6534700400A21 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		D3E13C6C25B6534700400A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E13C7625B6560300400A21 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
+		D3ED8B212640605D00787BE3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				D33FF7F8254784F2000682AB /* ContentView.swift */,
 				D365A52B254B23170039247B /* HomeView.swift */,
+				D3ED8B212640605D00787BE3 /* HomeViewModel.swift */,
 				D365A52E254B23CA0039247B /* ProjectsView.swift */,
 				D37F5175263C65F400C0B583 /* ProjectsViewModel.swift */,
 				D3DD430525687E2700E4B742 /* AwardsView.swift */,
@@ -486,6 +489,7 @@
 				D361BC9825DAF721006447FC /* SFSymbol.swift in Sources */,
 				D3726DD22553338B004B281F /* Project+CoreDataHelpers.swift in Sources */,
 				D3A6D60E25817ED600AA3B69 /* ProjectSummaryView.swift in Sources */,
+				D3ED8B222640605D00787BE3 /* HomeViewModel.swift in Sources */,
 				D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */,
 				D3DD430625687E2700E4B742 /* AwardsView.swift in Sources */,
 				D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */,
