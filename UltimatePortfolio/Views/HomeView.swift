@@ -5,7 +5,6 @@
 //  Created by Marc Respass on 10/29/20.
 //
 
-import CoreData
 import SwiftUI
 
 struct HomeView: View {

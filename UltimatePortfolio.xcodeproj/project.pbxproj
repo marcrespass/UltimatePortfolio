@@ -21,6 +21,7 @@
 		D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FD254784F3000682AB /* Preview Assets.xcassets */; };
 		D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */; };
 		D3511B4425F16F4D0057DA2F /* UltimatePortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3511B4325F16F4D0057DA2F /* UltimatePortfolioUITests.swift */; };
+		D355E67D2644828200B5DF12 /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D355E67C2644828200B5DF12 /* ItemRowViewModel.swift */; };
 		D361BC9825DAF721006447FC /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361BC9725DAF721006447FC /* SFSymbol.swift */; };
 		D365A52C254B23170039247B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52B254B23170039247B /* HomeView.swift */; };
 		D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52E254B23CA0039247B /* ProjectsView.swift */; };
@@ -92,6 +93,7 @@
 		D3511B4125F16F4D0057DA2F /* UltimatePortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3511B4325F16F4D0057DA2F /* UltimatePortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioUITests.swift; sourceTree = "<group>"; };
 		D3511B4525F16F4D0057DA2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D355E67C2644828200B5DF12 /* ItemRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowViewModel.swift; sourceTree = "<group>"; };
 		D361BC9725DAF721006447FC /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		D365A52B254B23170039247B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D365A52E254B23CA0039247B /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
@@ -162,19 +164,20 @@
 		D322F8CC25AE1F32009E21E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3DD430525687E2700E4B742 /* AwardsView.swift */,
 				D33FF7F8254784F2000682AB /* ContentView.swift */,
+				D3C90A1925547A3200E3F485 /* EditItemView.swift */,
+				D3D074E9255A0F36008F0652 /* EditProjectView.swift */,
 				D365A52B254B23170039247B /* HomeView.swift */,
 				D3ED8B212640605D00787BE3 /* HomeViewModel.swift */,
+				D3A6D60A258179D500AA3B69 /* ItemListView.swift */,
+				D3C90A1C25547FA500E3F485 /* ItemRowView.swift */,
+				D355E67C2644828200B5DF12 /* ItemRowViewModel.swift */,
+				D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */,
+				D3A6D60D25817ED600AA3B69 /* ProjectSummaryView.swift */,
 				D365A52E254B23CA0039247B /* ProjectsView.swift */,
 				D37F5175263C65F400C0B583 /* ProjectsViewModel.swift */,
-				D3DD430525687E2700E4B742 /* AwardsView.swift */,
-				D3A6D60A258179D500AA3B69 /* ItemListView.swift */,
-				D3A6D60D25817ED600AA3B69 /* ProjectSummaryView.swift */,
 				D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */,
-				D3C90A1C25547FA500E3F485 /* ItemRowView.swift */,
-				D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */,
-				D3D074E9255A0F36008F0652 /* EditProjectView.swift */,
-				D3C90A1925547A3200E3F485 /* EditItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */,
 				D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */,
 				D312DCBF2579806E00F1CB4E /* Color+Extensions.swift in Sources */,
+				D355E67D2644828200B5DF12 /* ItemRowViewModel.swift in Sources */,
 				D3D074EA255A0F36008F0652 /* EditProjectView.swift in Sources */,
 				D3DD42F9256876E300E4B742 /* SelectSomethingView.swift in Sources */,
 				D3DD430325687DA000E4B742 /* Award.swift in Sources */,
