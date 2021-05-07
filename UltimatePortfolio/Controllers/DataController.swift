@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import CoreSpotlight
 import SwiftUI
 
 /// An environment singleton responsible for managing our Core Data stack, including handling saving,
@@ -43,6 +44,7 @@ public final class DataController: ObservableObject {
     ///
     /// Defaults to permanent storage
     /// - Parameter inMemory: Whether to store this data in temporary memory or not.
+    // MARK: - Init
     init(inMemory: Bool = false) {
         self.container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
 
@@ -88,8 +90,8 @@ public final class DataController: ObservableObject {
     }
 }
 
+// MARK: - Helpers
 extension DataController {
-
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
@@ -143,5 +145,27 @@ extension DataController {
             }
         }
         try viewContext.save()
+    }
+}
+
+// MARK: - Core Spotlight
+extension DataController {
+    func update(_ item: Item) {
+        let itemID = item.objectID.uriRepresentation().absoluteString
+        let projectID = item.project?.objectID.uriRepresentation().absoluteString
+
+        let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
+        attributeSet.title = item.itemTitle
+        attributeSet.contentDescription = item.itemDetail
+
+        let searchableItem = CSSearchableItem(
+            uniqueIdentifier: itemID,
+            domainIdentifier: projectID,
+            attributeSet: attributeSet
+        )
+
+        CSSearchableIndex.default().indexSearchableItems([searchableItem])
+
+        self.save()
     }
 }
