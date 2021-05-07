@@ -85,7 +85,15 @@ public final class DataController: ObservableObject {
         }
     }
 
-    func delete(_ object: NSManagedObject) {
+    func delete(_ object: Item) {
+        let moID = object.objectID.uriRepresentation().absoluteString
+        CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [moID])
+        self.container.viewContext.delete(object)
+    }
+
+    func delete(_ object: Project) {
+        let moID = object.objectID.uriRepresentation().absoluteString
+        CSSearchableIndex.default().deleteSearchableItems(withDomainIdentifiers: [moID])
         self.container.viewContext.delete(object)
     }
 }
@@ -93,6 +101,7 @@ public final class DataController: ObservableObject {
 // MARK: - Helpers
 extension DataController {
     func deleteAll() {
+        // TODO: Delete all spotlight data
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
         _ = try? container.viewContext.execute(batchDeleteRequest1)
@@ -167,5 +176,13 @@ extension DataController {
         CSSearchableIndex.default().indexSearchableItems([searchableItem])
 
         self.save()
+    }
+
+    func item(with uniqueIdentifier: String) -> Item? {
+        guard let url = URL(string: uniqueIdentifier),
+              let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else { return nil }
+
+        let item = try? container.viewContext.existingObject(with: id) as? Item
+        return item
     }
 }
