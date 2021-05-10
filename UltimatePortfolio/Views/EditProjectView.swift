@@ -18,6 +18,8 @@ struct EditProjectView: View {
     @State private var detail: String
     @State private var color: String
     @State private var showingDeleteConfirm = false
+    @State private var remindMe: Bool
+    @State private var reminderTime: Date
 
     @State private var hapticEngine = try? CHHapticEngine()
 
@@ -31,6 +33,14 @@ struct EditProjectView: View {
         _title = State(wrappedValue: project.projectTitle)
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
+
+        if let projectReminderTime = project.reminderTime {
+            _reminderTime = State(wrappedValue: projectReminderTime)
+            _remindMe = State(wrappedValue: true)
+        } else {
+            _reminderTime = State(wrappedValue: Date())
+            _remindMe = State(wrappedValue: false)
+        }
     }
 
     var body: some View {
@@ -46,6 +56,16 @@ struct EditProjectView: View {
                     }
                 }
                 .padding(.vertical)
+            }
+            // TODO: Localize labels
+            Section(header: Text("Project reminders")) {
+                Toggle("Show reminders:", isOn: $remindMe.animation().onChange(update))
+
+                if remindMe {
+                    DatePicker("Reminder time",
+                               selection: $reminderTime.onChange(update),
+                               displayedComponents: .hourAndMinute)
+                }
             }
 
             // swiftlint:disable:next line_length
@@ -94,6 +114,11 @@ struct EditProjectView: View {
         self.project.title = self.title
         self.project.detail = self.detail
         self.project.color = self.color
+        if remindMe {
+            self.project.reminderTime = reminderTime
+        } else {
+            self.project.reminderTime = nil
+        }
     }
 
     func delete() {
