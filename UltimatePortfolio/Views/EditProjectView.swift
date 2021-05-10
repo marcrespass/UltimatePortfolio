@@ -18,6 +18,7 @@ struct EditProjectView: View {
     @State private var detail: String
     @State private var color: String
     @State private var showingDeleteConfirm = false
+    @State private var showingNotificationError = false
     @State private var remindMe: Bool
     @State private var reminderTime: Date
 
@@ -60,6 +61,12 @@ struct EditProjectView: View {
             // TODO: Localize labels
             Section(header: Text("Project reminders")) {
                 Toggle("Show reminders:", isOn: $remindMe.animation().onChange(update))
+                    .alert(isPresented: $showingNotificationError) {
+                        Alert(title: Text("Oops!"),
+                              message: Text("There was a problem. Please check that you have notifications enabled."),
+                              primaryButton: .default(Text("Check Settings"), action: showAppSettings),
+                              secondaryButton: .cancel())
+                    }
 
                 if remindMe {
                     DatePicker("Reminder time",
@@ -110,14 +117,32 @@ struct EditProjectView: View {
         .accessibilityLabel(LocalizedStringKey(colorName))
     }
 
+    func showAppSettings() {
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+
+        if UIApplication.shared.canOpenURL(settingsURL) {
+            UIApplication.shared.open(settingsURL)
+        }
+    }
+
     func update() {
         self.project.title = self.title
         self.project.detail = self.detail
         self.project.color = self.color
         if remindMe {
             self.project.reminderTime = reminderTime
+            dataController.addReminders(for: project) { success in
+                if success == false {
+                    project.reminderTime = nil
+                    remindMe = false
+                    showingNotificationError = true
+                }
+            }
         } else {
             self.project.reminderTime = nil
+            dataController.removeReminders(for: project)
         }
     }
 
