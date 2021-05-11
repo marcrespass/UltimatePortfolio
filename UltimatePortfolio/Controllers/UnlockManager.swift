@@ -19,10 +19,14 @@ import StoreKit
 class UnlockManager: NSObject, ObservableObject {
     enum RequestState {
         case loading
-        case loaded
-        case failed
+        case loaded(SKProduct)
+        case failed(Error?)
         case purchased
         case deferred
+    }
+
+    private enum StoreError: Error {
+        case invalidIdentifiers, missingProduct
     }
 
     private let dataController: DataController
@@ -47,6 +51,10 @@ class UnlockManager: NSObject, ObservableObject {
 
         // Start watching the payment queue.
         SKPaymentQueue.default().add(self)
+
+        // IF already unlocked, do not start request
+        //        guard dataController.fullVersionUnlocked == false else { return }
+        if dataController.fullVersionUnlocked == true { return }
         // Set ourselves up to be notified when the product request completes.
         self.request.delegate = self
         // Start the request
@@ -56,18 +64,43 @@ class UnlockManager: NSObject, ObservableObject {
     deinit {
         SKPaymentQueue.default().remove(self)
     }
-}
 
-// MARK: - SKPaymentTransactionObserver (watch for purchases happening)
-extension UnlockManager: SKPaymentTransactionObserver {
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func buy(product: SKProduct) {
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
+    }
 
+    func restore() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
 
 // MARK: - SKProductsRequestDelegate (request products from Apple)
 extension UnlockManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        DispatchQueue.main.async {
+            // Store the returned products for later, if we need them.
+            self.loadedProducts = response.products
+
+            guard let unlock = self.loadedProducts.first else {
+                self.requestState = .failed(StoreError.missingProduct)
+                return
+            }
+
+            if response.invalidProductIdentifiers.isEmpty == false {
+                print("ALERT: Received invalid product identifiers: \(response.invalidProductIdentifiers)")
+                self.requestState = .failed(StoreError.invalidIdentifiers)
+                return
+            }
+
+            self.requestState = .loaded(unlock)
+        }
+    }
+}
+
+// MARK: - SKPaymentTransactionObserver (watch for purchases happening)
+extension UnlockManager: SKPaymentTransactionObserver {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
 
     }
 }
