@@ -33,6 +33,10 @@ class UnlockManager: NSObject, ObservableObject {
     private let request: SKProductsRequest
     private var loadedProducts = [SKProduct]()
 
+    var canMakePayments: Bool {
+        SKPaymentQueue.canMakePayments()
+    }
+
     @Published var requestState = RequestState.loading
 
     // THIS IS EXTREMELY IMPORTANT
@@ -101,6 +105,30 @@ extension UnlockManager: SKProductsRequestDelegate {
 // MARK: - SKPaymentTransactionObserver (watch for purchases happening)
 extension UnlockManager: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        DispatchQueue.main.async { [self] in
+            for transaction in transactions {
+                switch transaction.transactionState {
+                    case .purchased, .restored:
+                        self.dataController.fullVersionUnlocked = true
+                        self.requestState = .purchased
+                        queue.finishTransaction(transaction)
 
+                    case .failed:
+                        if let product = loadedProducts.first {
+                            self.requestState = .loaded(product)
+                        } else {
+                            self.requestState = .failed(transaction.error)
+                        }
+
+                        queue.finishTransaction(transaction)
+
+                    case .deferred:
+                        self.requestState = .deferred
+
+                    default:
+                        break
+                }
+            }
+        }
     }
 }
