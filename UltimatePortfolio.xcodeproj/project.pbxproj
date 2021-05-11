@@ -16,6 +16,7 @@
 		D3131A1A25BCDD19004C9670 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3131A1925BCDD19004C9670 /* AwardTests.swift */; };
 		D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */; };
 		D32BCAF9264AD61400CAE3D9 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BCAF8264AD61400CAE3D9 /* UnlockManager.swift */; };
+		D32BCAFC264AEC1C00CAE3D9 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */; };
 		D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */; };
 		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
 		D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FA254784F3000682AB /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		D32BCAF8264AD61400CAE3D9 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
 		D32BCAFA264ADCD900CAE3D9 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+Extensions.swift"; sourceTree = "<group>"; };
 		D33FF7F3254784F2000682AB /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33FF7F6254784F2000682AB /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		D33FF7F8254784F2000682AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */,
 				D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */,
 				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
+				D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */,
 				D361BC9725DAF721006447FC /* SFSymbol.swift */,
 			);
 			path = Extensions;
@@ -513,6 +516,7 @@
 				D3C90A1D25547FA500E3F485 /* ItemRowView.swift in Sources */,
 				D33FF7F9254784F2000682AB /* ContentView.swift in Sources */,
 				D37F5176263C65F400C0B583 /* ProjectsViewModel.swift in Sources */,
+				D32BCAFC264AEC1C00CAE3D9 /* SKProduct+Extensions.swift in Sources */,
 				D365A52C254B23170039247B /* HomeView.swift in Sources */,
 				D32BCAF9264AD61400CAE3D9 /* UnlockManager.swift in Sources */,
 				D3A6D60B258179D500AA3B69 /* ItemListView.swift in Sources */,
