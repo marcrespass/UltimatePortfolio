@@ -7,6 +7,7 @@
 
 import CoreData
 import CoreSpotlight
+import StoreKit
 import SwiftUI
 import UserNotifications
 
@@ -152,7 +153,7 @@ extension DataController {
     func createSampleData() throws {
         let viewContext = self.container.viewContext
 
-        for index1 in 1...5 {
+        for index1 in 1...3 {
             let project = Project(context: viewContext)
             project.title = "Project \(index1)"
             project.items = []
@@ -270,6 +271,17 @@ extension DataController {
                     completion(false)
                 }
             }
+        }
+    }
+
+    func appLaunched() {
+        guard count(for: Project.fetchRequest()) >= 5 else { return }
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+
+        if let windowScene = scene as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
         }
     }
 }

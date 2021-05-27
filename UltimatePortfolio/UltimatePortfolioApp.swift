@@ -45,6 +45,7 @@ struct UltimatePortfolioApp: App {
                 // phase won't detect our app losing focus.
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
                            perform: self.save(_:))
+                .onAppear(perform: dataController.appLaunched)
         }
     }
 
