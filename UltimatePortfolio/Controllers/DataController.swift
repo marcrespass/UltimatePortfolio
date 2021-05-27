@@ -75,12 +75,12 @@ public final class DataController: ObservableObject {
         // NB: UITests do not add XCTestSessionIdentifier
         if ProcessInfo.processInfo.isDebugNotTesting() {
             self.deleteAll()
-            try? self.createSampleData()
+//            try? self.createSampleData()
         }
 
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
-            print("CommandLine has this.")
+            print("enable-testing is set.")
             self.deleteAll()
             UIView.setAnimationsEnabled(false)
         }

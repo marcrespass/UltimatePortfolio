@@ -8,6 +8,7 @@
 import StoreKit
 
 extension SKProduct {
+    // TODO: Aren't formatters expensive? Should this be a lazy or static?
     var localizedPrice: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
