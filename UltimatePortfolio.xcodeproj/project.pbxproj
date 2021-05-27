@@ -46,6 +46,9 @@
 		D3C90A1D25547FA500E3F485 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C90A1C25547FA500E3F485 /* ItemRowView.swift */; };
 		D3CC7DA425E85CA700490DA1 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7DA325E85CA700490DA1 /* PerformanceTests.swift */; };
 		D3D074EA255A0F36008F0652 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D074E9255A0F36008F0652 /* EditProjectView.swift */; };
+		D3D94164265FDDAA00189076 /* PurchaseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D94163265FDDAA00189076 /* PurchaseButtonStyle.swift */; };
+		D3D94166265FDF2200189076 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D94165265FDF2200189076 /* ProductView.swift */; };
+		D3D94168265FE09300189076 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D94167265FE09300189076 /* UnlockView.swift */; };
 		D3DD42F9256876E300E4B742 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */; };
 		D3DD42FF25687C5600E4B742 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */; };
 		D3DD430325687DA000E4B742 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD430225687DA000E4B742 /* Award.swift */; };
@@ -129,6 +132,9 @@
 		D3C90A1C25547FA500E3F485 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		D3CC7DA325E85CA700490DA1 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		D3D074E9255A0F36008F0652 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		D3D94163265FDDAA00189076 /* PurchaseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButtonStyle.swift; sourceTree = "<group>"; };
+		D3D94165265FDF2200189076 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		D3D94167265FE09300189076 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		D3DD430225687DA000E4B742 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
@@ -183,6 +189,8 @@
 				D365A52E254B23CA0039247B /* ProjectsView.swift */,
 				D37F5175263C65F400C0B583 /* ProjectsViewModel.swift */,
 				D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */,
+				D3D94165265FDF2200189076 /* ProductView.swift */,
+				D3D94167265FE09300189076 /* UnlockView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 				D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */,
 				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
 				D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */,
+				D3D94163265FDDAA00189076 /* PurchaseButtonStyle.swift */,
 				D361BC9725DAF721006447FC /* SFSymbol.swift */,
 			);
 			path = Extensions;
@@ -497,8 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D94168265FE09300189076 /* UnlockView.swift in Sources */,
 				D361BC9825DAF721006447FC /* SFSymbol.swift in Sources */,
 				D3726DD22553338B004B281F /* Project+CoreDataHelpers.swift in Sources */,
+				D3D94164265FDDAA00189076 /* PurchaseButtonStyle.swift in Sources */,
 				D3A6D60E25817ED600AA3B69 /* ProjectSummaryView.swift in Sources */,
 				D3ED8B222640605D00787BE3 /* HomeViewModel.swift in Sources */,
 				D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */,
@@ -506,6 +517,7 @@
 				D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */,
 				D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */,
 				D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */,
+				D3D94166265FDF2200189076 /* ProductView.swift in Sources */,
 				D312DCBF2579806E00F1CB4E /* Color+Extensions.swift in Sources */,
 				D355E67D2644828200B5DF12 /* ItemRowViewModel.swift in Sources */,
 				D3D074EA255A0F36008F0652 /* EditProjectView.swift in Sources */,
