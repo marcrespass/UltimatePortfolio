@@ -72,13 +72,6 @@ public final class DataController: ObservableObject {
             if let error = error { fatalError(error.localizedDescription) }
         }
 
-        // If we are debugging and not unit testing
-        // NB: UITests do not add XCTestSessionIdentifier
-        if ProcessInfo.processInfo.isDebugNotTesting() {
-            self.deleteAll()
-//            try? self.createSampleData()
-        }
-
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
             print("enable-testing is set.")
@@ -282,6 +275,20 @@ extension DataController {
 
         if let windowScene = scene as? UIWindowScene {
             SKStoreReviewController.requestReview(in: windowScene)
+        }
+    }
+
+    @discardableResult func addProject() -> Bool {
+        let canCreate = self.fullVersionUnlocked || self.count(for: Project.fetchRequest()) < 3
+
+        if canCreate {
+            let project = Project(context: self.self.container.viewContext)
+            project.closed = false
+            project.creationDate = Date()
+            self.save()
+            return true
+        } else {
+            return false
         }
     }
 }

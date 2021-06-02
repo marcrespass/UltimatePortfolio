@@ -4,3 +4,7 @@
 
 Working through the steps to learn Swift UI
 
+Adding a Quick Action
+* Add a url type for the action
+* Register a quick action for our application
+

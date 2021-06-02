@@ -21,6 +21,7 @@ import SwiftUI
 // https://www.hackingwithswift.com/articles/227/which-swiftui-property-wrapper
 @main
 struct UltimatePortfolioApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var dataController: DataController
     @StateObject var unlockManager: UnlockManager
 

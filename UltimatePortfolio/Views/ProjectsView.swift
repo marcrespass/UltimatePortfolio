@@ -19,6 +19,10 @@ struct ProjectsView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
+    func openURL(_ url: URL) {
+        viewModel.addProject()
+    }
+
     var projectsListView: some View {
         List {
             ForEach(viewModel.projects) { project in
@@ -106,8 +110,8 @@ struct ProjectsView: View {
         .sheet(isPresented: $viewModel.showingUnlockView) {
             UnlockView()
         }
+//        .onOpenURL(perform: openURL) // This only works if this tab is already selected
     }
-
 }
 
 struct ProjectsView_Previews: PreviewProvider {
