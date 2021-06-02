@@ -129,6 +129,23 @@ public final class DataController: ObservableObject {
 
 // MARK: - Helpers
 extension DataController {
+    func fetchRequestForTopItems(count: Int) -> NSFetchRequest<Item> {
+        // Construct a fetch request to show all 10 highest priority items from open projects
+        let itemRequest: NSFetchRequest<Item> = Item.fetchRequest()
+
+        let completedPredicate = NSPredicate(format: "completed = false")
+        let openPredicate = NSPredicate(format: "project.closed = false")
+        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
+
+        itemRequest.predicate = compoundPredicate
+        itemRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Item.priority, ascending: false)
+        ]
+
+        itemRequest.fetchLimit = count
+        return itemRequest
+    }
+
     func deleteAll() {
         // TODO: Delete all spotlight data
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()

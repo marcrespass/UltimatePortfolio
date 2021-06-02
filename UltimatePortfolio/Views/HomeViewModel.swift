@@ -40,19 +40,7 @@ extension HomeView {
                                                                  sectionNameKeyPath: nil,
                                                                  cacheName: nil)
 
-            // Construct a fetch request to show all 10 highest priority items from open projects
-            let itemRequest: NSFetchRequest<Item> = Item.fetchRequest()
-
-            let completedPredicate = NSPredicate(format: "completed = false")
-            let openPredicate = NSPredicate(format: "project.closed = false")
-            let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
-
-            itemRequest.predicate = compoundPredicate
-            itemRequest.sortDescriptors = [
-                NSSortDescriptor(keyPath: \Item.priority, ascending: false)
-            ]
-
-            itemRequest.fetchLimit = 10
+            let itemRequest = dataController.fetchRequestForTopItems(count: 10)
             self.itemsController = NSFetchedResultsController(fetchRequest: itemRequest,
                                                               managedObjectContext: dataController.container.viewContext,
                                                               sectionNameKeyPath: nil,
