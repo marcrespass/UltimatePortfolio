@@ -5,11 +5,10 @@
 //  Created by Marc Respass on 10/28/20.
 //
 
+import SwiftUI
 import CoreData
 import CoreSpotlight
-import StoreKit
-import SwiftUI
-import UserNotifications
+import WidgetKit
 
 /// An environment singleton responsible for managing our Core Data stack, including handling saving,
 /// counting fetch requests, tracking awards, and dealing with sample data.
@@ -66,6 +65,12 @@ public final class DataController: ObservableObject {
 
         if inMemory {
             self.container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            let groupID = "group.com.iliosinc.ultimateportfolio"
+
+            if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+                container.persistentStoreDescriptions.first?.url = url.appendingPathComponent("Main.sqlite")
+            }
         }
 
         self.container.loadPersistentStores { _, error in
@@ -88,7 +93,8 @@ public final class DataController: ObservableObject {
         if self.container.viewContext.hasChanges {
             do {
                 try self.container.viewContext.save()
-            } catch {
+                WidgetCenter.shared.reloadAllTimelines()
+             } catch {
                 print("ERROR: \(error.localizedDescription)")
             }
         }
@@ -104,6 +110,20 @@ public final class DataController: ObservableObject {
         let moID = object.objectID.uriRepresentation().absoluteString
         CSSearchableIndex.default().deleteSearchableItems(withDomainIdentifiers: [moID])
         self.container.viewContext.delete(object)
+    }
+
+    @discardableResult func addProject() -> Bool {
+        let canCreate = self.fullVersionUnlocked || self.count(for: Project.fetchRequest()) < 3
+
+        if canCreate {
+            let project = Project(context: self.self.container.viewContext)
+            project.closed = false
+            project.creationDate = Date()
+            self.save()
+            return true
+        } else {
+            return false
+        }
     }
 }
 
@@ -122,23 +142,6 @@ extension DataController {
 
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
-    }
-
-    func hasEarned(award: Award) -> Bool {
-        switch award.criterion {
-            case "items":
-                let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
-                let awardCount = count(for: fetchRequest)
-                return awardCount >= award.value
-            case "complete":
-                let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
-                fetchRequest.predicate = NSPredicate(format: "completed = true")
-                let awardCount = count(for: fetchRequest)
-                return awardCount >= award.value
-            default:
-                // fatalError("Unknown award criterion \(award.criterion).")
-                return false
-        }
     }
 
     /// Creates example projects and items to make manual testing easier.
@@ -193,102 +196,5 @@ extension DataController {
 
         let item = try? container.viewContext.existingObject(with: id) as? Item
         return item
-    }
-}
-
-// MARK: - Local Notifications
-extension DataController {
-    // Called by EditProjectView
-    func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings { settings in
-            switch settings.authorizationStatus {
-                case .notDetermined:
-                    self.requestNotifications { success in
-                        if success {
-                            self.placeReminders(for: project, completion: completion)
-                        } else {
-                            DispatchQueue.main.async { completion(false) }
-                        }
-                    }
-                case .authorized:
-                    self.placeReminders(for: project, completion: completion)
-                default:
-                    DispatchQueue.main.async {
-                        completion(false)
-                    }
-            }
-        }
-    }
-
-    func removeReminders(for project: Project) {
-        let center = UNUserNotificationCenter.current()
-        let projectID = project.objectID.uriRepresentation().absoluteString
-        center.removePendingNotificationRequests(withIdentifiers: [projectID])
-    }
-
-    // request permission to show a notification
-    private func requestNotifications(completion: @escaping (Bool) -> Void) {
-        let center = UNUserNotificationCenter.current()
-
-        center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
-            completion(granted)
-        }
-    }
-
-    private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {
-        // 1 content of notification - what to show
-        let content = UNMutableNotificationContent()
-        content.title = project.projectTitle
-        content.sound = .default
-
-        if let projectDetail = project.detail {
-            content.subtitle = projectDetail
-        }
-
-        // 2 trigger - when to show
-        let components = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime ?? Date())
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-
-        // 3 wrap content + trigger + id
-        let projectID = project.objectID.uriRepresentation().absoluteString
-        let request = UNNotificationRequest(identifier: projectID, content: content, trigger: trigger)
-
-        // 4 pass data to notification center
-        let center = UNUserNotificationCenter.current()
-        center.add(request) { error in
-            DispatchQueue.main.async {
-                if error == nil {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            }
-        }
-    }
-
-    func appLaunched() {
-        guard count(for: Project.fetchRequest()) >= 5 else { return }
-        
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-
-        if let windowScene = scene as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: windowScene)
-        }
-    }
-
-    @discardableResult func addProject() -> Bool {
-        let canCreate = self.fullVersionUnlocked || self.count(for: Project.fetchRequest()) < 3
-
-        if canCreate {
-            let project = Project(context: self.self.container.viewContext)
-            project.closed = false
-            project.creationDate = Date()
-            self.save()
-            return true
-        } else {
-            return false
-        }
     }
 }
