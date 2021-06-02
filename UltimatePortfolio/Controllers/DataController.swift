@@ -146,6 +146,10 @@ extension DataController {
         return itemRequest
     }
 
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        return (try? container.viewContext.fetch(fetchRequest)) ?? []
+    }
+
     func deleteAll() {
         // TODO: Delete all spotlight data
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
