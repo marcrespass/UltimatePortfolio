@@ -26,7 +26,7 @@ struct Provider: TimelineProvider {
 
     func loadItems() -> [Item] {
         let dataController = DataController()
-        let itemRequest = dataController.fetchRequestForTopItems(count: 1)
+        let itemRequest = dataController.fetchRequestForTopItems(count: 5)
         return dataController.results(for: itemRequest)
     }
 }
@@ -54,8 +54,35 @@ struct PortfolioWidgetEntryView: View {
 }
 
 @main
-struct PortfolioWidget: Widget {
-    let kind: String = "PortfolioWidget"
+struct PortfolioWidgets: WidgetBundle {
+    var body: some Widget {
+        SimplePortfolioWidget()
+        ComplexPortfolioWidget()
+    }
+}
+
+struct PortfolioWidgetMultipleEntryView: View {
+    var entry: Provider.Entry
+
+    var body: some View {
+        Text("Hello, world!")
+    }
+}
+
+struct ComplexPortfolioWidget: Widget {
+    let kind: String = "ComplexPortfolioWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            PortfolioWidgetMultipleEntryView(entry: entry)
+        }
+        .configurationDisplayName("Up next…")
+        .description("Your most important items.")
+    }
+}
+
+struct SimplePortfolioWidget: Widget {
+    let kind: String = "SimplePortfolioWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
