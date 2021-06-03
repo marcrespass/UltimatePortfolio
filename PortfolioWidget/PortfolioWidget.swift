@@ -62,10 +62,31 @@ struct PortfolioWidgets: WidgetBundle {
 }
 
 struct PortfolioWidgetMultipleEntryView: View {
-    var entry: Provider.Entry
+    let entry: Provider.Entry
 
     var body: some View {
-        Text("Hello, world!")
+        VStack(spacing: 5) {
+            ForEach(entry.items) { item in
+                HStack {
+                    Color(item.project?.color ?? "Light Blue")
+                        .frame(width: 5)
+                        .clipShape(Capsule())
+
+                    VStack(alignment: .leading) {
+                        Text(item.itemTitle)
+                            .font(.headline)
+
+                        if let projectTitle = item.project?.projectTitle {
+                            Text(projectTitle)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    Spacer()
+                }
+            }
+        }
+        .padding(20)
     }
 }
 
@@ -97,7 +118,8 @@ struct SimplePortfolioWidget: Widget {
 
 struct PortfolioWidget_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioWidgetEntryView(entry: SimpleEntry(date: Date(), items: [Item.example]))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+//        PortfolioWidgetEntryView(entry: SimpleEntry(date: Date(), items: [Item.example]))
+        PortfolioWidgetMultipleEntryView(entry: SimpleEntry(date: Date(), items: [Item.example]))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
