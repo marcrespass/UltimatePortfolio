@@ -27,6 +27,9 @@
 		D35CA92C266932F30078DDC1 /* Project+CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */; };
 		D35CA92D266933360078DDC1 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */; };
 		D35CA92E2669368E0078DDC1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D302DDCD2555F56D0050E01E /* Colors.xcassets */; };
+		D35CA935266940FD0078DDC1 /* ComplexWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CA933266940880078DDC1 /* ComplexWidget.swift */; };
+		D35CA936266941000078DDC1 /* SimpleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CA93126693FEF0078DDC1 /* SimpleWidget.swift */; };
+		D35CA937266941070078DDC1 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CA92F26693F910078DDC1 /* DataProvider.swift */; };
 		D361BC9825DAF721006447FC /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361BC9725DAF721006447FC /* SFSymbol.swift */; };
 		D365A52C254B23170039247B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52B254B23170039247B /* HomeView.swift */; };
 		D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52E254B23CA0039247B /* ProjectsView.swift */; };
@@ -139,6 +142,9 @@
 		D3511B4325F16F4D0057DA2F /* UltimatePortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioUITests.swift; sourceTree = "<group>"; };
 		D3511B4525F16F4D0057DA2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D355E67C2644828200B5DF12 /* ItemRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowViewModel.swift; sourceTree = "<group>"; };
+		D35CA92F26693F910078DDC1 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D35CA93126693FEF0078DDC1 /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; };
+		D35CA933266940880078DDC1 /* ComplexWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidget.swift; sourceTree = "<group>"; };
 		D361BC9725DAF721006447FC /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		D365A52B254B23170039247B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D365A52E254B23CA0039247B /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
@@ -403,6 +409,9 @@
 			isa = PBXGroup;
 			children = (
 				D3CC414B2667F9B800FE2948 /* PortfolioWidget.swift */,
+				D35CA933266940880078DDC1 /* ComplexWidget.swift */,
+				D35CA93126693FEF0078DDC1 /* SimpleWidget.swift */,
+				D35CA92F26693F910078DDC1 /* DataProvider.swift */,
 				D3CC414D2667F9B900FE2948 /* Assets.xcassets */,
 				D3CC414F2667F9B900FE2948 /* Info.plist */,
 			);
@@ -670,9 +679,12 @@
 				D35CA92D266933360078DDC1 /* Sequence+Extensions.swift in Sources */,
 				D3CC41582667FAA600FE2948 /* Main.xcdatamodeld in Sources */,
 				D35CA92C266932F30078DDC1 /* Project+CoreDataHelpers.swift in Sources */,
+				D35CA936266941000078DDC1 /* SimpleWidget.swift in Sources */,
 				D3CC41592667FAB600FE2948 /* Item+CoreDataHelpers.swift in Sources */,
 				D3CC414C2667F9B800FE2948 /* PortfolioWidget.swift in Sources */,
+				D35CA937266941070078DDC1 /* DataProvider.swift in Sources */,
 				D3CC41572667FA9B00FE2948 /* DataController.swift in Sources */,
+				D35CA935266940FD0078DDC1 /* ComplexWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
