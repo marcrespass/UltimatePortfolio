@@ -62,11 +62,26 @@ struct PortfolioWidgets: WidgetBundle {
 }
 
 struct PortfolioWidgetMultipleEntryView: View {
+    @Environment(\.widgetFamily) var widgetFamily
+    @Environment(\.sizeCategory) var sizeCategory
+
     let entry: Provider.Entry
+    var items: ArraySlice<Item> {
+        let itemCount: Int
+        switch widgetFamily {
+            case .systemSmall:
+                itemCount = 1
+            case .systemLarge:
+                itemCount = sizeCategory < .extraExtraLarge ? 6 : 4
+            default:
+                itemCount = sizeCategory < .extraLarge ? 3 : 2
+        }
+        return entry.items.prefix(itemCount)
+    }
 
     var body: some View {
         VStack(spacing: 5) {
-            ForEach(entry.items) { item in
+            ForEach(items) { item in
                 HStack {
                     Color(item.project?.color ?? "Light Blue")
                         .frame(width: 5)
@@ -75,6 +90,7 @@ struct PortfolioWidgetMultipleEntryView: View {
                     VStack(alignment: .leading) {
                         Text(item.itemTitle)
                             .font(.headline)
+                            .layoutPriority(1)
 
                         if let projectTitle = item.project?.projectTitle {
                             Text(projectTitle)
@@ -118,7 +134,6 @@ struct SimplePortfolioWidget: Widget {
 
 struct PortfolioWidget_Previews: PreviewProvider {
     static var previews: some View {
-//        PortfolioWidgetEntryView(entry: SimpleEntry(date: Date(), items: [Item.example]))
         PortfolioWidgetMultipleEntryView(entry: SimpleEntry(date: Date(), items: [Item.example]))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
