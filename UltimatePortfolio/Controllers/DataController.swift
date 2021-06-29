@@ -77,10 +77,13 @@ public final class DataController: ObservableObject {
             if let error = error { fatalError(error.localizedDescription) }
         }
 
+        // Needed for iCloud to update immediately
+        self.container.viewContext.automaticallyMergesChangesFromParent = true
+
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
             print("enable-testing is set.")
-            self.deleteAll()
+            try? self.deleteAll()
             UIView.setAnimationsEnabled(false)
         }
         #endif
@@ -94,7 +97,7 @@ public final class DataController: ObservableObject {
             do {
                 try self.container.viewContext.save()
                 WidgetCenter.shared.reloadAllTimelines()
-             } catch {
+            } catch {
                 print("ERROR: \(error.localizedDescription)")
             }
         }
@@ -150,15 +153,22 @@ extension DataController {
         return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
 
-    func deleteAll() {
-        // TODO: Delete all spotlight data
+    func deleteAll() throws {
+        // TODO: ¿Delete all spotlight data?
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
-        let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
-        _ = try? container.viewContext.execute(batchDeleteRequest1)
+        self.delete(fetchRequest1)
 
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
-        let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
-        _ = try? container.viewContext.execute(batchDeleteRequest2)
+        self.delete(fetchRequest2)
+    }
+
+    private func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        batchDeleteRequest.resultType = .resultTypeObjectIDs
+        if let delete = try? container.viewContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
+            let changes = [NSDeletedObjectsKey: (delete.result as? [NSManagedObjectID]) ?? []]
+            NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [container.viewContext])
+        }
     }
 
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {

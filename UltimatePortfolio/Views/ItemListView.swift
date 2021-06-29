@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemListView: View {
     let title: LocalizedStringKey
-    let items: ArraySlice<Item>
+    @Binding var items: ArraySlice<Item>
 
     fileprivate func itemCard(item: Item) -> some View {
         HStack(spacing: 20) {

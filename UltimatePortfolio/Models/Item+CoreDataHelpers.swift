@@ -8,6 +8,12 @@
 import CoreData
 
 extension Item {
+    public override func awakeFromInsert() {
+        self.completed = false
+        self.priority = 2
+        self.creationDate = Date()
+    }
+    
     static var example: Item {
         let controller = DataController.preview
         let viewContext = controller.container.viewContext
