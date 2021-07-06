@@ -5,7 +5,7 @@
 //  Created by Marc Respass on 11/4/20.
 //
 
-import CoreData
+import CloudKit
 import SwiftUI
 
 extension Project {
@@ -96,5 +96,9 @@ extension Project {
             case .optimized:
                 return projectItemsDefaultSorted
         }
+    }
+
+    func prepareCloudRecords() {
+
     }
 }
