@@ -134,7 +134,6 @@
 		D33FF7FD254784F3000682AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D33FF7FF254784F3000682AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = 1XcodeWarnings.xcconfig; sourceTree = "<group>"; };
-		D33FF80A25478535000682AB /* 2Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = 2Project.xcconfig; sourceTree = "<group>"; };
 		D33FF80B25478535000682AB /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
 		D33FF80C25478535000682AB /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
 		D33FF80D25478535000682AB /* App-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +198,7 @@
 		D3E13C6C25B6534700400A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E13C7625B6560300400A21 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
 		D3ED8B212640605D00787BE3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = 2Project.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,7 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */,
-				D33FF80A25478535000682AB /* 2Project.xcconfig */,
+				D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */,
 				D33FF80B25478535000682AB /* App-Debug.xcconfig */,
 				D33FF80C25478535000682AB /* App-Release.xcconfig */,
 				D33FF80D25478535000682AB /* App-Shared.xcconfig */,
@@ -755,14 +755,14 @@
 /* Begin XCBuildConfiguration section */
 		D33FF800254784F3000682AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D33FF80A25478535000682AB /* 2Project.xcconfig */;
+			baseConfigurationReference = D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		D33FF801254784F3000682AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D33FF80A25478535000682AB /* 2Project.xcconfig */;
+			baseConfigurationReference = D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
