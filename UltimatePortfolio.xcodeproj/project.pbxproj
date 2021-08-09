@@ -75,6 +75,9 @@
 		D3E13C6B25B6534700400A21 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E13C6A25B6534700400A21 /* BaseTestCase.swift */; };
 		D3E13C7725B6560300400A21 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E13C7625B6560300400A21 /* AssetTests.swift */; };
 		D3ED8B222640605D00787BE3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ED8B212640605D00787BE3 /* HomeViewModel.swift */; };
+		D3EFC08926C1E541005CA4D6 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC08826C1E541005CA4D6 /* SharedProject.swift */; };
+		D3EFC08B26C1E587005CA4D6 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */; };
+		D3EFC08D26C1E618005CA4D6 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC08C26C1E618005CA4D6 /* LoadState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +201,9 @@
 		D3E13C6C25B6534700400A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E13C7625B6560300400A21 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
 		D3ED8B212640605D00787BE3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D3EFC08826C1E541005CA4D6 /* SharedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProject.swift; sourceTree = "<group>"; };
+		D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItem.swift; sourceTree = "<group>"; };
+		D3EFC08C26C1E618005CA4D6 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
 		D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = 2Project.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +273,9 @@
 				D378A351254A03900056EC66 /* Main.xcdatamodeld */,
 				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
 				D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */,
+				D3EFC08826C1E541005CA4D6 /* SharedProject.swift */,
+				D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */,
+				D3EFC08C26C1E618005CA4D6 /* LoadState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -637,6 +646,7 @@
 				D3D086FE2667CA460028415B /* AppDelegate.swift in Sources */,
 				D313C8A72566FE0000D76302 /* Sequence+Extensions.swift in Sources */,
 				D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */,
+				D3EFC08926C1E541005CA4D6 /* SharedProject.swift in Sources */,
 				D378A353254A03900056EC66 /* Main.xcdatamodeld in Sources */,
 				D3D94166265FDF2200189076 /* ProductView.swift in Sources */,
 				D3CC415D2667FB1100FE2948 /* DataController+Reminders.swift in Sources */,
@@ -651,8 +661,10 @@
 				D3C90A1D25547FA500E3F485 /* ItemRowView.swift in Sources */,
 				D33FF7F9254784F2000682AB /* ContentView.swift in Sources */,
 				D37F5176263C65F400C0B583 /* ProjectsViewModel.swift in Sources */,
+				D3EFC08D26C1E618005CA4D6 /* LoadState.swift in Sources */,
 				D32BCAFC264AEC1C00CAE3D9 /* SKProduct+Extensions.swift in Sources */,
 				D365A52C254B23170039247B /* HomeView.swift in Sources */,
+				D3EFC08B26C1E587005CA4D6 /* SharedItem.swift in Sources */,
 				D32BCAF9264AD61400CAE3D9 /* UnlockManager.swift in Sources */,
 				D3A6D60B258179D500AA3B69 /* ItemListView.swift in Sources */,
 				D33FF7F7254784F2000682AB /* UltimatePortfolioApp.swift in Sources */,

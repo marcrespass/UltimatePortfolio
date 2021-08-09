@@ -59,7 +59,7 @@ struct EditProjectView: View {
                 }
                 .padding(.vertical)
             }
-            // TODO: Localize labels
+
             Section(header: Text("Project reminders")) {
                 Toggle("Show reminders:", isOn: $remindMe.animation().onChange(update))
                     .alert(isPresented: $showingNotificationError) {
