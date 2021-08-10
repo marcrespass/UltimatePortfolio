@@ -50,6 +50,13 @@ struct ContentView: View {
                     SFSymbol.rosette
                     Text("Awards")
                 }
+
+            SharedProjectView()
+            .tag(SharedProjectView.tag)
+            .tabItem {
+                Image(systemName: "person.3")
+                Text("Community")
+            }
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
         .onContinueUserActivity(newProjectActivity, perform: createProject)
