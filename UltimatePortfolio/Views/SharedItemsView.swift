@@ -14,33 +14,40 @@ struct SharedItemsView: View {
     @State private var items = [SharedItem]()
     @State private var itemsLoadState = LoadState.inactive
 
+    @State private var messages = [ChatMessage]()
+
+    @AppStorage("username") var username: String?
+    @State private var showingSignIn = false
+    @State private var newChatText = ""
+
     var body: some View {
         List {
             Section {
                 switch itemsLoadState {
-                case .inactive, .loading:
-                    ProgressView()
-                case .noResults:
-                    Text("No results")
-                case .success:
-                    ForEach(items) { item in
-                        VStack(alignment: .leading) {
-                            Text(item.title)
-                                .font(.headline)
+                    case .inactive, .loading:
+                        ProgressView()
+                    case .noResults:
+                        Text("No results")
+                    case .success:
+                        ForEach(items) { item in
+                            VStack(alignment: .leading) {
+                                Text(item.title)
+                                    .font(.headline)
 
-                            if item.detail.isEmpty == false {
-                                Text(item.detail)
+                                if item.detail.isEmpty == false {
+                                    Text(item.detail)
+                                }
                             }
                         }
-                    }
                 }
             }
         }
-            .listStyle(InsetGroupedListStyle())
-            .navigationTitle(project.title)
-            .onAppear {
-                fetchSharedItems()
-            }
+        .listStyle(InsetGroupedListStyle())
+        .navigationTitle(project.title)
+        .onAppear {
+            fetchSharedItems()
+        }
+        .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
     func fetchSharedItems() {
@@ -74,6 +81,36 @@ struct SharedItemsView: View {
     func queryCompletion(cursor: CKQueryOperation.Cursor?, error: Error?) {
         if items.isEmpty {
             itemsLoadState = .noResults
+        }
+    }
+
+    func signIn() {
+        showingSignIn = true
+    }
+
+    func sendChatMessage() {
+        let text = newChatText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard text.count > 2,
+        let username = username else { return }
+
+        let message = CKRecord(recordType: "Message")
+        message["from"] = username
+        message["to"] = text
+
+        let projectID = CKRecord.ID(recordName: project.id)
+        message["project"] = CKRecord.Reference(recordID: projectID, action: .deleteSelf)
+
+        let backupChatText = newChatText
+        newChatText = ""
+
+        CKContainer.default().publicCloudDatabase.save(message) { record, error in
+            if let error = error {
+                print(error.localizedDescription)
+                newChatText = backupChatText
+            } else if let record = record {
+                let message = ChatMessage(from: record)
+                messages.append(message)
+            }
         }
     }
 }
