@@ -64,7 +64,12 @@ struct SharedItemsView: View {
                 }
             }
             Section(header: Text("Chat about this project…"), footer: messagesFooter) {
-                Text("Messages go here")
+                if messagesLoadState == .success {
+                    ForEach(messages) { message in
+                        Text("\(Text(message.from).bold()): \(message.text)")
+                        .multilineTextAlignment(.leading)
+                    }
+                }
             }
         }
             .listStyle(InsetGroupedListStyle())
@@ -149,7 +154,7 @@ struct SharedItemsView: View {
 
         let message = CKRecord(recordType: "Message")
         message["from"] = username
-        message["to"] = text
+        message["text"] = text
 
         let projectID = CKRecord.ID(recordName: project.id)
         message["project"] = CKRecord.Reference(recordID: projectID, action: .deleteSelf)
