@@ -22,7 +22,6 @@
 		D33FF7F9254784F2000682AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33FF7F8254784F2000682AB /* ContentView.swift */; };
 		D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FA254784F3000682AB /* Assets.xcassets */; };
 		D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33FF7FD254784F3000682AB /* Preview Assets.xcassets */; };
-		D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */; };
 		D3511B4425F16F4D0057DA2F /* UltimatePortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3511B4325F16F4D0057DA2F /* UltimatePortfolioUITests.swift */; };
 		D355E67D2644828200B5DF12 /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D355E67C2644828200B5DF12 /* ItemRowViewModel.swift */; };
 		D35CA92C266932F30078DDC1 /* Project+CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */; };
@@ -34,6 +33,9 @@
 		D361BC9825DAF721006447FC /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361BC9725DAF721006447FC /* SFSymbol.swift */; };
 		D365A52C254B23170039247B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52B254B23170039247B /* HomeView.swift */; };
 		D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52E254B23CA0039247B /* ProjectsView.swift */; };
+		D3689ECE26CC20C600C4CEB6 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3689ECD26CC20C600C4CEB6 /* ChatMessage.swift */; };
+		D3689ED026CC219B00C4CEB6 /* 2Project-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D3689ECF26CC219B00C4CEB6 /* 2Project-Debug.xcconfig */; };
+		D3689ED226CC21F500C4CEB6 /* 2Project-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D3689ED126CC21F500C4CEB6 /* 2Project-Release.xcconfig */; };
 		D36D4AFF25CB0A06002BD900 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D4AFE25CB0A06002BD900 /* DevelopmentTests.swift */; };
 		D36D4B0525CB2042002BD900 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D4B0425CB2042002BD900 /* ExtensionTests.swift */; };
 		D36D4B1025CB26C6002BD900 /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = D36D4B0F25CB26C6002BD900 /* DecodableDictionary.json */; };
@@ -154,6 +156,9 @@
 		D361BC9725DAF721006447FC /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		D365A52B254B23170039247B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D365A52E254B23CA0039247B /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		D3689ECD26CC20C600C4CEB6 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		D3689ECF26CC219B00C4CEB6 /* 2Project-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "2Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		D3689ED126CC21F500C4CEB6 /* 2Project-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "2Project-Release.xcconfig"; sourceTree = "<group>"; };
 		D36D4AFE25CB0A06002BD900 /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		D36D4B0425CB2042002BD900 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		D36D4B0F25CB26C6002BD900 /* DecodableDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
@@ -210,7 +215,7 @@
 		D3EFC08826C1E541005CA4D6 /* SharedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProject.swift; sourceTree = "<group>"; };
 		D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItem.swift; sourceTree = "<group>"; };
 		D3EFC08C26C1E618005CA4D6 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
-		D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = 2Project.xcconfig; sourceTree = "<group>"; };
+		D3F9EA5C26A73E590070F0F9 /* 2Project-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "2Project-Shared.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +290,7 @@
 				D3EFC08826C1E541005CA4D6 /* SharedProject.swift */,
 				D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */,
 				D3EFC08C26C1E618005CA4D6 /* LoadState.swift */,
+				D3689ECD26CC20C600C4CEB6 /* ChatMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,7 +384,9 @@
 			isa = PBXGroup;
 			children = (
 				D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */,
-				D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */,
+				D3F9EA5C26A73E590070F0F9 /* 2Project-Shared.xcconfig */,
+				D3689ECF26CC219B00C4CEB6 /* 2Project-Debug.xcconfig */,
+				D3689ED126CC21F500C4CEB6 /* 2Project-Release.xcconfig */,
 				D33FF80B25478535000682AB /* App-Debug.xcconfig */,
 				D33FF80C25478535000682AB /* App-Release.xcconfig */,
 				D33FF80D25478535000682AB /* App-Shared.xcconfig */,
@@ -535,7 +543,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					D33FF7F2254784F2000682AB = {
 						CreatedOnToolsVersion = 12.1;
@@ -581,12 +589,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */,
+				D3689ED026CC219B00C4CEB6 /* 2Project-Debug.xcconfig in Resources */,
 				D3A42BC7257EF14500AEA544 /* Localizable.strings in Resources */,
 				D3A42BD2257EF34B00AEA544 /* Awards.json in Resources */,
 				D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */,
-				D33FF80825478516000682AB /* 1XcodeWarnings.xcconfig in Resources */,
 				D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */,
 				D3A42BCC257EF1C900AEA544 /* Localizable.stringsdict in Resources */,
+				D3689ED226CC21F500C4CEB6 /* 2Project-Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +691,7 @@
 				D30677ED26C426CD00B8898C /* SignInView.swift in Sources */,
 				D3726DCF25533383004B281F /* Item+CoreDataHelpers.swift in Sources */,
 				D3D087002667CA4F0028415B /* SceneDelegate.swift in Sources */,
+				D3689ECE26CC20C600C4CEB6 /* ChatMessage.swift in Sources */,
 				D3131A1425BCD9C9004C9670 /* ProcessInfo+Extensions.swift in Sources */,
 				D3C90A1A25547A3200E3F485 /* EditItemView.swift in Sources */,
 				D302DDA12555C4F60050E01E /* Binding+Extensions.swift in Sources */,
@@ -779,14 +789,14 @@
 /* Begin XCBuildConfiguration section */
 		D33FF800254784F3000682AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */;
+			baseConfigurationReference = D3689ECF26CC219B00C4CEB6 /* 2Project-Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		D33FF801254784F3000682AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3F9EA5C26A73E590070F0F9 /* 2Project.xcconfig */;
+			baseConfigurationReference = D3689ED126CC21F500C4CEB6 /* 2Project-Release.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -795,7 +805,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80B25478535000682AB /* App-Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Debug;
 		};
@@ -803,7 +812,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80C25478535000682AB /* App-Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Release;
 		};
@@ -1152,7 +1160,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = UltimatePortfolioTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1221,7 +1229,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = UltimatePortfolioTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
