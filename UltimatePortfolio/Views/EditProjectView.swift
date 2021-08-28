@@ -13,6 +13,7 @@ struct EditProjectView: View {
     enum CloudStatus {
         case checking, exists, absent
     }
+
     @ObservedObject var project: Project
 
     @EnvironmentObject var dataController: DataController
@@ -68,7 +69,8 @@ struct EditProjectView: View {
             }
 
             Section(header: Text("Project reminders")) {
-                Toggle("Show reminders:", isOn: $remindMe.animation().onChange(update))
+                Toggle("Show reminders:", isOn: $remindMe.animation()
+                    .onChange(update))
                     .alert(isPresented: $showingNotificationError) {
                         Alert(title: Text("Oops!"),
                             message: Text("There was a problem. Please check that you have notifications enabled."),
@@ -95,10 +97,20 @@ struct EditProjectView: View {
         }
             .navigationTitle("Edit Project")
             .toolbar {
-                Button(action: uploadToCloud) {
-                    Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+                switch cloudStatus {
+                case .checking:
+                    ProgressView()
+                case .exists:
+                    Button(action: removeFromCloud) {
+                        Label("Remove from iCloud", systemImage: "icloud.slash")
+                    }
+                case .absent:
+                    Button(action: uploadToCloud) {
+                        Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+                    }
                 }
             }
+            .onAppear(perform: updateCloudStatus)
             .onDisappear(perform: self.dataController.save)
             .alert(isPresented: $showingDeleteConfirm) {
                 Alert(title: Text("Delete project?"),
@@ -216,7 +228,8 @@ struct EditProjectView: View {
         if project.closed {
             // trigger haptics
             do {
-                try self.hapticEngine?.start()
+                try self.hapticEngine?
+                    .start()
                 // Play with these settings to see the differences
                 let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
                 let intenstity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
