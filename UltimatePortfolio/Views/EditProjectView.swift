@@ -10,6 +10,9 @@ import SwiftUI
 import CoreHaptics
 
 struct EditProjectView: View {
+    enum CloudStatus {
+        case checking, exists, absent
+    }
     @ObservedObject var project: Project
 
     @EnvironmentObject var dataController: DataController
@@ -27,6 +30,7 @@ struct EditProjectView: View {
 
     @AppStorage("username") var username: String?
     @State private var showingSignIn = false
+    @State private var cloudStatus = CloudStatus.checking
 
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -104,9 +108,33 @@ struct EditProjectView: View {
             .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
+    func updateCloudStatus() {
+        project.checkCloudStatus { exists in
+            if exists {
+                cloudStatus = .exists
+            } else {
+                cloudStatus = .absent
+            }
+        }
+    }
+
+    func removeFromCloud() {
+        let name = project.objectID.uriRepresentation().absoluteString
+        let id = CKRecord.ID(recordName: name)
+
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
+
+        operation.modifyRecordsCompletionBlock = { _, _, _ in
+            updateCloudStatus()
+        }
+
+        cloudStatus = .checking
+        CKContainer.default().publicCloudDatabase.add(operation)
+    }
+
     func uploadToCloud() {
         if let username = username {
-            let records = project.prepareCloudRecords()
+            let records = project.prepareCloudRecords(owner: username)
             let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
             operation.savePolicy = .allKeys
             operation.modifyRecordsCompletionBlock = { _, _, error in
@@ -114,6 +142,11 @@ struct EditProjectView: View {
                     print("Error: \(error.localizedDescription)")
                 }
             }
+
+            operation.modifyRecordsCompletionBlock = { _, _, _ in
+                updateCloudStatus()
+            }
+            cloudStatus = .checking
 
             CKContainer.default().publicCloudDatabase.add(operation)
         } else {
