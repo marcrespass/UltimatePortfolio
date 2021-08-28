@@ -107,8 +107,7 @@ struct EditProjectView: View {
     func uploadToCloud() {
         if let username = username {
             let records = project.prepareCloudRecords()
-            let operation = CKModifyRecordsOperation(recordsToSave: records,
-                recordIDsToDelete: nil)
+            let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
             operation.savePolicy = .allKeys
             operation.modifyRecordsCompletionBlock = { _, _, error in
                 if let error = error {

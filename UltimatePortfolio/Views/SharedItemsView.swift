@@ -46,39 +46,39 @@ struct SharedItemsView: View {
         List {
             Section {
                 switch itemsLoadState {
-                case .inactive, .loading:
-                    ProgressView()
-                case .noResults:
-                    Text("No results")
-                case .success:
-                    ForEach(items) { item in
-                        VStack(alignment: .leading) {
-                            Text(item.title)
-                                .font(.headline)
+                    case .inactive, .loading:
+                        ProgressView()
+                    case .noResults:
+                        Text("No results")
+                    case .success:
+                        ForEach(items) { item in
+                            VStack(alignment: .leading) {
+                                Text(item.title)
+                                    .font(.headline)
 
-                            if item.detail.isEmpty == false {
-                                Text(item.detail)
+                                if item.detail.isEmpty == false {
+                                    Text(item.detail)
+                                }
                             }
                         }
-                    }
                 }
             }
             Section(header: Text("Chat about this project…"), footer: messagesFooter) {
                 if messagesLoadState == .success {
                     ForEach(messages) { message in
                         Text("\(Text(message.from).bold()): \(message.text)")
-                        .multilineTextAlignment(.leading)
+                            .multilineTextAlignment(.leading)
                     }
                 }
             }
         }
-            .listStyle(InsetGroupedListStyle())
-            .navigationTitle(project.title)
-            .onAppear {
-                fetchSharedItems()
-                fetchChatMessages()
-            }
-            .sheet(isPresented: $showingSignIn, content: SignInView.init)
+        .listStyle(InsetGroupedListStyle())
+        .navigationTitle(project.title)
+        .onAppear {
+            fetchSharedItems()
+            fetchChatMessages()
+        }
+        .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
     func fetchSharedItems() {
@@ -161,7 +161,7 @@ struct SharedItemsView: View {
 
         let backupChatText = newChatText
         newChatText = ""
-
+        
         CKContainer.default().publicCloudDatabase.save(message) { record, error in
             if let error = error {
                 print(error.localizedDescription)
