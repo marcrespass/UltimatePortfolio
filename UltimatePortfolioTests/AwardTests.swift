@@ -37,7 +37,7 @@ class AwardTests: BaseTestCase {
         }
     }
 
-    func testAddingItems() {
+    func testAddingItems() throws {
         let values = [1, 10, 20, 50, 100, 250, 500, 1000]
 
         for (index, value) in values.enumerated() {
@@ -50,11 +50,11 @@ class AwardTests: BaseTestCase {
             }
             XCTAssertEqual(matches.count, index + 1, "Matches count should be count + 1")
 
-            dataController.deleteAll()
+            try dataController.deleteAll()
         }
     }
 
-    func testCompletingItems() {
+    func testCompletingItems() throws {
         let values = [1, 10, 20, 50, 100, 250, 500, 1000]
 
         for (index, value) in values.enumerated() {
@@ -68,7 +68,7 @@ class AwardTests: BaseTestCase {
             }
             XCTAssertEqual(matches.count, index + 1, "Completing \(value) items should unlock \(index + 1) awards")
             
-            dataController.deleteAll()
+            try dataController.deleteAll()
         }
     }
 }
