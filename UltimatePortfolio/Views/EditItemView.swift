@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PreviewDevice
 
 // $property is a
 // binding or projected value of property
@@ -66,8 +67,10 @@ struct EditItemView: View {
     }
 }
 
+// https://github.com/Toni77777/PreviewDevice
 struct EditItemView_Previews: PreviewProvider {
     static var previews: some View {
         EditItemView(item: Item.example)
+            .previewDevice(device: .iphone12Mini)
     }
 }

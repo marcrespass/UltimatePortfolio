@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,9 +33,8 @@
 		D361BC9825DAF721006447FC /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361BC9725DAF721006447FC /* SFSymbol.swift */; };
 		D365A52C254B23170039247B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52B254B23170039247B /* HomeView.swift */; };
 		D365A52F254B23CB0039247B /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365A52E254B23CA0039247B /* ProjectsView.swift */; };
+		D366F03E26DD8048001D85FF /* PreviewDevice in Frameworks */ = {isa = PBXBuildFile; productRef = D366F03D26DD8048001D85FF /* PreviewDevice */; };
 		D3689ECE26CC20C600C4CEB6 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3689ECD26CC20C600C4CEB6 /* ChatMessage.swift */; };
-		D3689ED026CC219B00C4CEB6 /* 2Project-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D3689ECF26CC219B00C4CEB6 /* 2Project-Debug.xcconfig */; };
-		D3689ED226CC21F500C4CEB6 /* 2Project-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D3689ED126CC21F500C4CEB6 /* 2Project-Release.xcconfig */; };
 		D36D4AFF25CB0A06002BD900 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D4AFE25CB0A06002BD900 /* DevelopmentTests.swift */; };
 		D36D4B0525CB2042002BD900 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D4B0425CB2042002BD900 /* ExtensionTests.swift */; };
 		D36D4B1025CB26C6002BD900 /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = D36D4B0F25CB26C6002BD900 /* DecodableDictionary.json */; };
@@ -224,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D378A35E254A11FB0056EC66 /* CloudKit.framework in Frameworks */,
+				D366F03E26DD8048001D85FF /* PreviewDevice in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +479,9 @@
 				D3CC41512667F9B900FE2948 /* PBXTargetDependency */,
 			);
 			name = UltimatePortfolio;
+			packageProductDependencies = (
+				D366F03D26DD8048001D85FF /* PreviewDevice */,
+			);
 			productName = UltimatePortfolio;
 			productReference = D33FF7F3254784F2000682AB /* UltimatePortfolio.app */;
 			productType = "com.apple.product-type.application";
@@ -571,6 +574,9 @@
 				es,
 			);
 			mainGroup = D33FF7EA254784F2000682AB;
+			packageReferences = (
+				D366F03C26DD8048001D85FF /* XCRemoteSwiftPackageReference "PreviewDevice" */,
+			);
 			productRefGroup = D33FF7F4254784F2000682AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -589,13 +595,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33FF7FE254784F3000682AB /* Preview Assets.xcassets in Resources */,
-				D3689ED026CC219B00C4CEB6 /* 2Project-Debug.xcconfig in Resources */,
 				D3A42BC7257EF14500AEA544 /* Localizable.strings in Resources */,
 				D3A42BD2257EF34B00AEA544 /* Awards.json in Resources */,
 				D302DDCE2555F56D0050E01E /* Colors.xcassets in Resources */,
 				D33FF7FB254784F3000682AB /* Assets.xcassets in Resources */,
 				D3A42BCC257EF1C900AEA544 /* Localizable.stringsdict in Resources */,
-				D3689ED226CC21F500C4CEB6 /* 2Project-Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1298,6 +1302,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D366F03C26DD8048001D85FF /* XCRemoteSwiftPackageReference "PreviewDevice" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Toni77777/PreviewDevice.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D366F03D26DD8048001D85FF /* PreviewDevice */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D366F03C26DD8048001D85FF /* XCRemoteSwiftPackageReference "PreviewDevice" */;
+			productName = PreviewDevice;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D378A351254A03900056EC66 /* Main.xcdatamodeld */ = {

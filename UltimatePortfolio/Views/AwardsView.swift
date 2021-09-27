@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PreviewDevice
 
 struct AwardsView: View {
     static let tag: String? = "Awards"
@@ -64,7 +65,10 @@ struct AwardsView: View {
 }
 
 struct AwardsView_Previews: PreviewProvider {
+    static var dataController = DataController.preview
     static var previews: some View {
         AwardsView()
+            .previewDevice(device: .iphone12Mini, colorSchemes: [.light, .dark])
+            .environmentObject(self.dataController)
     }
 }
