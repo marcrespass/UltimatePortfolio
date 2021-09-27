@@ -136,10 +136,13 @@ struct EditProjectView: View {
 
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
 
-        operation.modifyRecordsCompletionBlock = { _, _, _ in
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+
             updateCloudStatus()
         }
-
         cloudStatus = .checking
         CKContainer.default().publicCloudDatabase.add(operation)
     }
