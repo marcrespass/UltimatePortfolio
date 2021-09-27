@@ -47,6 +47,7 @@
 		D37F5176263C65F400C0B583 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F5175263C65F400C0B583 /* ProjectsViewModel.swift */; };
 		D397AE5226C2E90100ABDD3F /* SharedProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397AE5126C2E90100ABDD3F /* SharedProjectView.swift */; };
 		D39B79DB27024BD0009AB967 /* Error+CloudKitMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39B79DA27024BD0009AB967 /* Error+CloudKitMessage.swift */; };
+		D39B79DD270266C5009AB967 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39B79DC270266C5009AB967 /* CloudError.swift */; };
 		D3A42BC7257EF14500AEA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BC9257EF14500AEA544 /* Localizable.strings */; };
 		D3A42BCC257EF1C900AEA544 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BCE257EF1C900AEA544 /* Localizable.stringsdict */; };
 		D3A42BD2257EF34B00AEA544 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = D3A42BD4257EF34B00AEA544 /* Awards.json */; };
@@ -172,6 +173,7 @@
 		D37F5175263C65F400C0B583 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		D397AE5126C2E90100ABDD3F /* SharedProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectView.swift; sourceTree = "<group>"; };
 		D39B79DA27024BD0009AB967 /* Error+CloudKitMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+CloudKitMessage.swift"; sourceTree = "<group>"; };
+		D39B79DC270266C5009AB967 /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		D3A42BC8257EF14500AEA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; wrapsLines = 0; };
 		D3A42BCB257EF14C00AEA544 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; wrapsLines = 0; };
 		D3A42BCD257EF1C900AEA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
 				D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */,
 				D39B79DA27024BD0009AB967 /* Error+CloudKitMessage.swift */,
+				D39B79DC270266C5009AB967 /* CloudError.swift */,
 				D3D94163265FDDAA00189076 /* PurchaseButtonStyle.swift */,
 				D361BC9725DAF721006447FC /* SFSymbol.swift */,
 			);
@@ -667,6 +670,7 @@
 				D3A6D60E25817ED600AA3B69 /* ProjectSummaryView.swift in Sources */,
 				D3ED8B222640605D00787BE3 /* HomeViewModel.swift in Sources */,
 				D3C8C8F126C2F88600CA6B14 /* SharedItemsView.swift in Sources */,
+				D39B79DD270266C5009AB967 /* CloudError.swift in Sources */,
 				D302DDA42555F1B20050E01E /* ProjectHeaderView.swift in Sources */,
 				D3DD430625687E2700E4B742 /* AwardsView.swift in Sources */,
 				D3D086FE2667CA460028415B /* AppDelegate.swift in Sources */,
