@@ -269,16 +269,16 @@
 				D3A6D60A258179D500AA3B69 /* ItemListView.swift */,
 				D3C90A1C25547FA500E3F485 /* ItemRowView.swift */,
 				D355E67C2644828200B5DF12 /* ItemRowViewModel.swift */,
+				D3D94165265FDF2200189076 /* ProductView.swift */,
 				D302DDA32555F1B20050E01E /* ProjectHeaderView.swift */,
 				D3A6D60D25817ED600AA3B69 /* ProjectSummaryView.swift */,
 				D365A52E254B23CA0039247B /* ProjectsView.swift */,
 				D37F5175263C65F400C0B583 /* ProjectsViewModel.swift */,
 				D3DD42F8256876E300E4B742 /* SelectSomethingView.swift */,
-				D3D94165265FDF2200189076 /* ProductView.swift */,
-				D3D94167265FE09300189076 /* UnlockView.swift */,
-				D397AE5126C2E90100ABDD3F /* SharedProjectView.swift */,
 				D3C8C8F026C2F88600CA6B14 /* SharedItemsView.swift */,
+				D397AE5126C2E90100ABDD3F /* SharedProjectView.swift */,
 				D30677EC26C426CD00B8898C /* SignInView.swift */,
+				D3D94167265FE09300189076 /* UnlockView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,15 +286,15 @@
 		D322F8CE25AE1F4B009E21E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D3A42BD4257EF34B00AEA544 /* Awards.json */,
 				D3DD430225687DA000E4B742 /* Award.swift */,
-				D378A351254A03900056EC66 /* Main.xcdatamodeld */,
-				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
-				D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */,
-				D3EFC08826C1E541005CA4D6 /* SharedProject.swift */,
-				D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */,
-				D3EFC08C26C1E618005CA4D6 /* LoadState.swift */,
 				D3689ECD26CC20C600C4CEB6 /* ChatMessage.swift */,
+				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
+				D3EFC08C26C1E618005CA4D6 /* LoadState.swift */,
+				D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */,
+				D3EFC08A26C1E587005CA4D6 /* SharedItem.swift */,
+				D3EFC08826C1E541005CA4D6 /* SharedProject.swift */,
+				D3A42BD4257EF34B00AEA544 /* Awards.json */,
+				D378A351254A03900056EC66 /* Main.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,15 +316,15 @@
 			isa = PBXGroup;
 			children = (
 				D302DDA02555C4F60050E01E /* Binding+Extensions.swift */,
-				D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */,
 				D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */,
-				D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */,
-				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
-				D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */,
-				D39B79DA27024BD0009AB967 /* Error+CloudKitMessage.swift */,
 				D39B79DC270266C5009AB967 /* CloudError.swift */,
+				D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */,
+				D39B79DA27024BD0009AB967 /* Error+CloudKitMessage.swift */,
+				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
 				D3D94163265FDDAA00189076 /* PurchaseButtonStyle.swift */,
+				D313C8A62566FE0000D76302 /* Sequence+Extensions.swift */,
 				D361BC9725DAF721006447FC /* SFSymbol.swift */,
+				D32BCAFB264AEC1C00CAE3D9 /* SKProduct+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
