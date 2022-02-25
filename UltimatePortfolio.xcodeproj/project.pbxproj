@@ -288,6 +288,7 @@
 			children = (
 				D3DD430225687DA000E4B742 /* Award.swift */,
 				D3689ECD26CC20C600C4CEB6 /* ChatMessage.swift */,
+				D39B79DC270266C5009AB967 /* CloudError.swift */,
 				D3726DCE25533383004B281F /* Item+CoreDataHelpers.swift */,
 				D3EFC08C26C1E618005CA4D6 /* LoadState.swift */,
 				D3726DD12553338B004B281F /* Project+CoreDataHelpers.swift */,
@@ -317,7 +318,6 @@
 			children = (
 				D302DDA02555C4F60050E01E /* Binding+Extensions.swift */,
 				D3DD42FE25687C5600E4B742 /* Bundle+Extensions.swift */,
-				D39B79DC270266C5009AB967 /* CloudError.swift */,
 				D312DCBE2579806E00F1CB4E /* Color+Extensions.swift */,
 				D39B79DA27024BD0009AB967 /* Error+CloudKitMessage.swift */,
 				D3131A1325BCD9C9004C9670 /* ProcessInfo+Extensions.swift */,
