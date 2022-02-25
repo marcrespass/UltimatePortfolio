@@ -18,6 +18,8 @@ struct SharedItemsView: View {
     @State private var messagesLoadState = LoadState.inactive
 
     @AppStorage("username") var username: String?
+    @AppStorage("chatCount") var chatCount = 0
+
     @State private var showingSignIn = false
     @State private var newChatText = ""
     @State private var cloudError: CloudError?
@@ -164,8 +166,7 @@ struct SharedItemsView: View {
 
     func sendChatMessage() {
         let text = newChatText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard text.count > 2,
-              let username = username else { return }
+        guard text.count > 2, let username = username else { return }
 
         let message = CKRecord(recordType: "Message")
         message["from"] = username
@@ -184,6 +185,7 @@ struct SharedItemsView: View {
             } else if let record = record {
                 let message = ChatMessage(from: record)
                 messages.append(message)
+                chatCount += 1
             }
         }
     }
