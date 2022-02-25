@@ -31,6 +31,11 @@ struct UltimatePortfolioApp: App {
 
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
+
+        #if targetEnvironment(simulator)
+        // force a specific username because sign in with Apple doesn't work in simulator
+        UserDefaults.standard.set("marcrespass", forKey: "username")
+        #endif
     }
 
     var body: some Scene {

@@ -66,23 +66,23 @@ struct EditProjectView: View {
                         self.colorButton(for: colorName)
                     }
                 }
-                    .padding(.vertical)
+                .padding(.vertical)
             }
 
             Section(header: Text("Project reminders")) {
                 Toggle("Show reminders:", isOn: $remindMe.animation()
                     .onChange(update))
-                    .alert(isPresented: $showingNotificationError) {
-                        Alert(title: Text("Oops!"),
-                            message: Text("There was a problem. Please check that you have notifications enabled."),
-                            primaryButton: .default(Text("Check Settings"), action: showAppSettings),
-                            secondaryButton: .cancel())
-                    }
+                .alert(isPresented: $showingNotificationError) {
+                    Alert(title: Text("Oops!"),
+                          message: Text("There was a problem. Please check that you have notifications enabled."),
+                          primaryButton: .default(Text("Check Settings"), action: showAppSettings),
+                          secondaryButton: .cancel())
+                }
 
                 if remindMe {
                     DatePicker("Reminder time",
-                        selection: $reminderTime.onChange(update),
-                        displayedComponents: .hourAndMinute)
+                               selection: $reminderTime.onChange(update),
+                               displayedComponents: .hourAndMinute)
                 }
             }
 
@@ -93,38 +93,40 @@ struct EditProjectView: View {
                 Button("Delete this project") {
                     self.showingDeleteConfirm.toggle()
                 }
-                    .accentColor(.red)
+                .accentColor(.red)
+                .alert(isPresented: $showingDeleteConfirm) {
+                    Alert(title: Text("Delete project?"),
+                          message: Text("Are you sure?"),
+                          primaryButton: .default(Text("Delete"), action: delete), secondaryButton: .cancel())
+                }
             }
         }
-            .navigationTitle("Edit Project")
-            .toolbar {
-                switch cloudStatus {
+        .navigationTitle("Edit Project")
+        .toolbar {
+            switch cloudStatus {
                 case .checking:
                     ProgressView()
                 case .exists:
-                    Button(action: removeFromCloud) {
+                    Button {
+                        self.removeFromCloud(deleteLocal: false)
+                    } label: {
                         Label("Remove from iCloud", systemImage: "icloud.slash")
                     }
                 case .absent:
                     Button(action: uploadToCloud) {
                         Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
                     }
-                }
             }
-            .onAppear(perform: updateCloudStatus)
-            .onDisappear(perform: self.dataController.save)
-            .alert(isPresented: $showingDeleteConfirm) {
-                Alert(title: Text("Delete project?"),
-                    message: Text("Are you sure?"),
-                    primaryButton: .default(Text("Delete"), action: delete), secondaryButton: .cancel())
-            }
-            .alert(item: $cloudError) { error in
-                Alert(
-                    title: Text("There was an error"),
-                    message: Text(error.localizedMessage)
-                )
-            }
-            .sheet(isPresented: $showingSignIn, content: SignInView.init)
+        }
+        .onAppear(perform: updateCloudStatus)
+        .onDisappear(perform: self.dataController.save)
+        .alert(item: $cloudError) { error in
+            Alert(
+                title: Text("There was an error"),
+                message: Text(error.localizedMessage)
+            )
+        }
+        .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
     func updateCloudStatus() {
@@ -137,7 +139,7 @@ struct EditProjectView: View {
         }
     }
 
-    func removeFromCloud() {
+    func removeFromCloud(deleteLocal: Bool) {
         let name = project.objectID.uriRepresentation().absoluteString
         let id = CKRecord.ID(recordName: name)
 
@@ -146,6 +148,11 @@ struct EditProjectView: View {
         operation.modifyRecordsCompletionBlock = { _, _, error in
             if let error = error {
                 cloudError = error.getCloudKitError()
+            } else {
+                if deleteLocal {
+                    dataController.delete(project)
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
 
             updateCloudStatus()
@@ -188,15 +195,15 @@ struct EditProjectView: View {
                     .font(.largeTitle)
             }
         }
-            .onTapGesture {
-                color = colorName
-                update()
-            }
-            .accessibilityElement(children: .ignore)
-            .accessibilityAddTraits(
-                colorName == color ? [.isButton, .isSelected] : .isButton
-            )
-            .accessibilityLabel(LocalizedStringKey(colorName))
+        .onTapGesture {
+            color = colorName
+            update()
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(
+            colorName == color ? [.isButton, .isSelected] : .isButton
+        )
+        .accessibilityLabel(LocalizedStringKey(colorName))
     }
 
     func showAppSettings() {
@@ -229,8 +236,12 @@ struct EditProjectView: View {
     }
 
     func delete() {
-        self.dataController.delete(self.project)
-        self.presentationMode.wrappedValue.dismiss()
+        if cloudStatus == .exists {
+            removeFromCloud(deleteLocal: true) // this sort of works. what if user is offline
+        } else {
+            self.dataController.delete(self.project)
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
 
     func toggleClosed() {
