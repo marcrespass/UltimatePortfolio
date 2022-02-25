@@ -390,9 +390,9 @@
 			isa = PBXGroup;
 			children = (
 				D33FF80725478516000682AB /* 1XcodeWarnings.xcconfig */,
-				D3F9EA5C26A73E590070F0F9 /* 2Project-Shared.xcconfig */,
 				D3689ECF26CC219B00C4CEB6 /* 2Project-Debug.xcconfig */,
 				D3689ED126CC21F500C4CEB6 /* 2Project-Release.xcconfig */,
+				D3F9EA5C26A73E590070F0F9 /* 2Project-Shared.xcconfig */,
 				D33FF80B25478535000682AB /* App-Debug.xcconfig */,
 				D33FF80C25478535000682AB /* App-Release.xcconfig */,
 				D33FF80D25478535000682AB /* App-Shared.xcconfig */,
