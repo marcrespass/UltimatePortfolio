@@ -20,7 +20,7 @@ struct AwardsView: View {
     }
 
     var body: some View {
-        NavigationView {
+        StackNavigationView {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(Award.allAwards) { award in
@@ -37,21 +37,24 @@ struct AwardsView: View {
                         }
                         .accessibilityLabel(label(for: award))
                         .accessibilityHint(Text(award.description))
+                        .buttonStyle(ImageButtonStyle())
                     }
                 }
             }
             .navigationTitle("Awards")
         }
-        .alert(isPresented: $showingAwardDetails) { () -> Alert in
-            if dataController.hasEarned(award: self.selectedAward) {
-                return Alert(title: Text("Unlocked: \(selectedAward.name)"),
-                             message: Text(selectedAward.description),
-                             dismissButton: .default(Text("OK")))
-            } else {
-                return Alert(title: Text("Locked"),
-                             message: Text(selectedAward.description),
-                             dismissButton: .default(Text("OK")))
-            }
+        .alert(isPresented: $showingAwardDetails) { self.getAwardAlert() }
+    }
+
+    func getAwardAlert() -> Alert {
+        if dataController.hasEarned(award: self.selectedAward) {
+            return Alert(title: Text("Unlocked: \(selectedAward.name)"),
+                         message: Text(selectedAward.description),
+                         dismissButton: .default(Text("OK")))
+        } else {
+            return Alert(title: Text("Locked"),
+                         message: Text(selectedAward.description),
+                         dismissButton: .default(Text("OK")))
         }
     }
 
