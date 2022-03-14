@@ -84,7 +84,9 @@ public final class DataController: ObservableObject {
         if CommandLine.arguments.contains("enable-testing") {
             print("enable-testing is set.")
             try? self.deleteAll()
+            #if os(iOS)
             UIView.setAnimationsEnabled(false)
+            #endif
         }
         #endif
 

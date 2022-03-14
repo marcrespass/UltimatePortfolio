@@ -52,12 +52,12 @@ struct HomeView: View {
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             .navigationTitle("Home")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .primaryAction) {
                     Button("Delete All") {
                         self.viewModel.deleteAllData()
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button("Add Data") {
                         self.viewModel.addSampleData()
                     }
