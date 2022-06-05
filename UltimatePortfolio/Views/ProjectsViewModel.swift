@@ -19,6 +19,7 @@ extension ProjectsView {
 
         private let projectsController: NSFetchedResultsController<Project>
         @Published var projects: [Project] = []
+        @Published var selectedItem: Item?
         @Published var showingUnlockView = false
 
         init(dataController: DataController, showClosedProjects: Bool) {
@@ -66,6 +67,11 @@ extension ProjectsView {
                 dataController.delete(item)
             }
 
+            dataController.save()
+        }
+
+        func delete(_ item: Item) {
+            dataController.delete(item)
             dataController.save()
         }
 
