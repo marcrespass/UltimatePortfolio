@@ -43,6 +43,7 @@ struct ProjectsView: View {
                         } label: {
                             Label("Add new item", systemImage: "plus")
                         }
+                        .buttonStyle(.borderless)
                     }
                 }
                 .disableCollapsing()

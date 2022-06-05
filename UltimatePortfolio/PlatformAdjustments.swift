@@ -9,6 +9,7 @@
 import SwiftUI
 
 typealias ImageButtonStyle = BorderlessButtonStyle
+typealias MacOnlySpacer = EmptyView
 
 extension Notification.Name {
     static let willResignActiveNotification = UIApplication.willResignActiveNotification
@@ -31,6 +32,10 @@ extension Section where Parent: View, Content: View, Footer: View {
 
 extension View {
     public func onDeleteCommand(perform action: (() -> Void)?) -> some View {
+        self
+    }
+
+    func macOnlyPadding() -> some View {
         self
     }
 }
