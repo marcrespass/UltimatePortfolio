@@ -994,7 +994,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3378B9527C9A16E00C427A2 /* App-mac-Debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolioMac/UltimatePortfolioMac.entitlements;
 			};
 			name = Debug;
 		};
@@ -1002,7 +1001,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3378B9327C9A16E00C427A2 /* App-mac-Release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolioMac/UltimatePortfolioMac.entitlements;
 			};
 			name = Release;
 		};
@@ -1024,7 +1022,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80B25478535000682AB /* App-iOS-Debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Debug;
 		};
@@ -1032,7 +1029,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80C25478535000682AB /* App-iOS-Release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Release;
 		};
