@@ -22,3 +22,15 @@ struct StackNavigationView<Content: View>: View {
             .navigationViewStyle(.stack)
     }
 }
+
+extension Section where Parent: View, Content: View, Footer: View {
+    func disableCollapsing() -> some View {
+        self
+    }
+}
+
+extension View {
+    public func onDeleteCommand(perform action: (() -> Void)?) -> some View {
+        self
+    }
+}

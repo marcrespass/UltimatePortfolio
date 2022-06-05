@@ -8,7 +8,7 @@
 // **** PlatformAdjustments MAC **** //
 import SwiftUI
 
-typealias InsetGroupedListStyle = SidebarListStyle
+typealias InsetGroupedListStyle = DefaultListStyle
 typealias ImageButtonStyle = BorderlessButtonStyle
 
 extension Notification.Name {
@@ -20,5 +20,11 @@ struct StackNavigationView<Content: View>: View {
 
     var body: some View {
         VStack(spacing: 0, content: content)
+    }
+}
+
+extension Section where Parent: View, Content: View, Footer: View {
+    func disableCollapsing() -> some View {
+        self.collapsible(false)
     }
 }
