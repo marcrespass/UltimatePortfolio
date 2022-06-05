@@ -19,16 +19,18 @@ struct ProjectsView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
-    func openURL(_ url: URL) {
-        viewModel.addProject()
-    }
-
     var projectsListView: some View {
-        List {
+        List(selection: $viewModel.selectedItem) {
             ForEach(viewModel.projects) { project in
                 Section(header: ProjectHeaderView(project: project)) {
                     ForEach(project.projectItems(using: self.viewModel.sortOrder)) { item in
                         ItemRowView(project: project, item: item)
+                            .contextMenu {
+                                Button("Delete", role: .destructive) {
+                                    viewModel.delete(item)
+                                }
+                            }
+                            .tag(item)
                     }
                     .onDelete { indexSet in
                         self.viewModel.delete(indexSet, project: project)
@@ -43,9 +45,14 @@ struct ProjectsView: View {
                         }
                     }
                 }
+                .disableCollapsing()
             }
         }
         .listStyle(InsetGroupedListStyle())
+        .onDeleteCommand {
+            guard let selectedItem = self.viewModel.selectedItem else { return }
+            viewModel.delete(selectedItem)
+        }
     }
 
     var addProjectToolbarItem: some ToolbarContent {
@@ -97,6 +104,11 @@ struct ProjectsView: View {
         }
 //        .onOpenURL(perform: openURL) // This only works if this tab is already selected
     }
+
+    func openURL(_ url: URL) {
+        viewModel.addProject()
+    }
+
 }
 
 struct ProjectsView_Previews: PreviewProvider {
