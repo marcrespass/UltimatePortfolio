@@ -3,5 +3,4 @@
 if [ ${CONFIGURATION} == "Release" ]; then
     buildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')
     /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "${INFOPLIST_FILE}"
-#    git commit -a -m "updated build version"
 fi
