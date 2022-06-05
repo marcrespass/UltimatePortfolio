@@ -5,6 +5,7 @@
 //  Created by Marc Respass on 5/11/21.
 //
 
+// swiftlint:disable line_length
 /*
  https://www.hackingwithswift.com/plus/ultimate-portfolio-app/offering-in-app-purchases-part-1
 
@@ -12,6 +13,7 @@
 
  However, this app is not on the App Store, so we don’t want to use App Store Connect. Instead, we’re going to create a StoreKit configuration file that mimics App Store Connect – we can create and price in-app purchases, then use them in testing our app, without having to get attach them to real apps or getting them approved by Apple.
  */
+// swiftlint:enable line_length
 
 import Combine
 import StoreKit

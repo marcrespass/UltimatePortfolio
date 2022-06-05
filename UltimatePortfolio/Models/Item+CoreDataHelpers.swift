@@ -8,7 +8,7 @@
 import CoreData
 
 extension Item {
-    public override func awakeFromInsert() {
+    override public func awakeFromInsert() {
         self.completed = false
         self.priority = 2
         self.creationDate = Date()

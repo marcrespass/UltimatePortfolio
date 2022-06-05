@@ -88,7 +88,6 @@ struct EditProjectView: View {
                 }
             }
 
-            // swiftlint:disable:next line_length
             Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.")) {
                 Button(project.closed ? "Reopen this project" : "Close this project", action: toggleClosed)
 
@@ -262,7 +261,10 @@ struct EditProjectView: View {
                 let end = CHHapticParameterCurve.ControlPoint(relativeTime: 1, value: 0)
                 let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
                 let event1 = CHHapticEvent(eventType: .hapticTransient, parameters: [intenstity, sharpness], relativeTime: 0)
-                let event2 = CHHapticEvent(eventType: .hapticContinuous, parameters: [sharpness, intenstity], relativeTime: 0.125, duration: 1)
+                let event2 = CHHapticEvent(eventType: .hapticContinuous,
+                                           parameters: [sharpness, intenstity],
+                                           relativeTime: 0.125,
+                                           duration: 1)
                 let pattern = try CHHapticPattern(events: [event1, event2], parameterCurves: [parameter])
 
                 let player = try hapticEngine?.makePlayer(with: pattern)

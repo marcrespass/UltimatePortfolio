@@ -33,6 +33,7 @@ struct ItemRowView: View {
 
 struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
+        // swiftlint:disable:next force_unwrapping
         ItemRowView(project: Item.example.project!, item: Item.example)
     }
 }

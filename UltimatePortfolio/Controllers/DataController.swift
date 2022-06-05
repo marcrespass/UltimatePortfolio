@@ -27,11 +27,11 @@ public final class DataController: ObservableObject {
 
     static let model: NSManagedObjectModel = {
         guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
-            fatalError()
+            fatalError("Main.momd not found in main bundle")
         }
 
         guard let mom = NSManagedObjectModel(contentsOf: url) else {
-            fatalError()
+            fatalError("Failed to load MOM from \(url)")
         }
 
         return mom

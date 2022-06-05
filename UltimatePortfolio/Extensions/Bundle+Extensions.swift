@@ -30,8 +30,7 @@ extension Bundle {
             fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' not found – \(context.debugDescription)")
         } catch DecodingError.typeMismatch(_, let context) {
             fatalError("Failed to decode \(file) from bundle due to type mismatch – \(context.debugDescription)")
-        } catch DecodingError.valueNotFound(let type, let context) {
-            // swiftlint:disable:next line_length
+        } catch DecodingError.valueNotFound(let type, let context) {            
             fatalError("Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
         } catch DecodingError.dataCorrupted(_) {
             fatalError("Failed to decode \(file) from bundle because it appears to be invalid JSON")

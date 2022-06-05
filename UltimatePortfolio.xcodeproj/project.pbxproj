@@ -264,6 +264,7 @@
 		D3CC41602667FC3100FE2948 /* DataController+AppLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController+AppLaunch.swift"; sourceTree = "<group>"; };
 		D3CC41622667FD3600FE2948 /* PortfolioWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PortfolioWidgetExtension.entitlements; sourceTree = "<group>"; };
 		D3CC7DA325E85CA700490DA1 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
+		D3CE8107284CF1F7009B6637 /* .swiftlint_refinement.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint_refinement.yml; sourceTree = "<group>"; };
 		D3D074E9255A0F36008F0652 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		D3D086FD2667CA460028415B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D086FF2667CA4F0028415B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -429,6 +430,7 @@
 				D3CC41622667FD3600FE2948 /* PortfolioWidgetExtension.entitlements */,
 				D3BCA75A2553030200EE536F /* README.md */,
 				D3B8E64B258FD347001F119B /* .swiftlint.yml */,
+				D3CE8107284CF1F7009B6637 /* .swiftlint_refinement.yml */,
 				D3B8E646258FD316001F119B /* Build-Phases */,
 				D33FF80625478516000682AB /* XCConfig */,
 				D33FF7F5254784F2000682AB /* UltimatePortfolio */,
@@ -992,6 +994,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3378B9527C9A16E00C427A2 /* App-mac-Debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolioMac/UltimatePortfolioMac.entitlements;
 			};
 			name = Debug;
 		};
@@ -999,6 +1002,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3378B9327C9A16E00C427A2 /* App-mac-Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolioMac/UltimatePortfolioMac.entitlements;
 			};
 			name = Release;
 		};
@@ -1020,6 +1024,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80B25478535000682AB /* App-iOS-Debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Debug;
 		};
@@ -1027,6 +1032,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D33FF80C25478535000682AB /* App-iOS-Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 			};
 			name = Release;
 		};

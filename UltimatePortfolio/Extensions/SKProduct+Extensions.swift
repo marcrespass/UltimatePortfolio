@@ -13,6 +13,7 @@ extension SKProduct {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = priceLocale
+        // swiftlint:disable:next force_unwrapping
         return formatter.string(from: price)!
     }
 }
