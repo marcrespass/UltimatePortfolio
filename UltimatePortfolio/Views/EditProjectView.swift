@@ -74,7 +74,7 @@ struct EditProjectView: View {
                     .onChange(update))
                 .alert("Oops!", isPresented: $showingNotificationError) {
                     #if os(iOS)
-                    Button(Text("Check Settings"), action: showAppSettings)
+                    Button("Check Settings", action: showAppSettings)
                     #endif
                     Button("OK") {}
                 } message: {
