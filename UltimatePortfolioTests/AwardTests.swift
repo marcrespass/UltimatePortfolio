@@ -25,6 +25,7 @@ class AwardTests: BaseTestCase {
 
     func testUserHasZeroAwards() throws {
         for award in self.awards {
+            // swiftlint:disable:next for_where
             if self.dataController.hasEarned(award: award) {
                 throw AwardError()
             }
